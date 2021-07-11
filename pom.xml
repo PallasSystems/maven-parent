@@ -46,15 +46,20 @@
         <maven-failsafe-plugin-version>3.0.0-M5</maven-failsafe-plugin-version>
         <maven-release-plugin-version>3.0.0-M4</maven-release-plugin-version>
 
-        <!-- Code analysis PLugin dependencies. -->
+        <!-- Code analysis Plugin dependencies. -->
         <jacoco-maven-plugin-version>0.8.7</jacoco-maven-plugin-version>
         <maven-pmd-plugin-version>3.14.0</maven-pmd-plugin-version>
+        <sonar-maven-plugin-version>5.1</sonar-maven-plugin-version>
+        <!-- Spotbugs specific configuration. -->
         <spotbugs-maven-plugin-version>4.2.0</spotbugs-maven-plugin-version>
         <spotbugs.xmlOutput>true</spotbugs.xmlOutput>
         <spotbugs.effort>Max</spotbugs.effort>
         <spotbugs.skipEmptyReport>true</spotbugs.skipEmptyReport>
         <spotbugs.threshold>Low</spotbugs.threshold>
-
+        <!-- Sonar Cloud integration requried Properties. -->
+        <sonar.projectKey>CRoBar-Solutions_devops_maven_parent</sonar.projectKey>
+        <sonar.organization>crobar-solutions</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <build>
