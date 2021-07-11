@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          ref        : main
       - run: git config --global user.email "github@crobar.uk"
       - run: git config --global user.name "GitHub Action"
       - name: Set up JDK 11
