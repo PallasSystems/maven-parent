@@ -38,6 +38,6 @@ jobs:
       - name: Release with Maven
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml release:prepare release:perform -DreleaseVersion=${{ github.event.release.tag_name }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dusername=${{ github.actor }} -Dpassword=${{ secrets.GITHUB_TOKEN }}
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ secrets.RELEASE_USER }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
