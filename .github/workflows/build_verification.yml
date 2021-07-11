@@ -1,4 +1,4 @@
-name: Java CI
+name: Build Verification of Maven project
 
 on: [push, pull_request, workflow_dispatch]
 

@@ -1,4 +1,4 @@
-name: Java CI
+name: Release Maven project
 
 on:
   release:
