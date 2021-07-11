@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.crobar</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <developers>
+        <developer>
+            <name>Stephen Crocker</name>
+            <organization>CRoBar Solutions</organization>
+            <email>stevecrox@hotmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/CRoBar-Solutions/devops_maven_parent.git</connection>
+        <developerConnection>scm:git:git@github.com:CRoBar-Solutions/devops_maven_parent.git</developerConnection>
+        <url>https://github.com/CRoBar-Solutions/devops_maven_parent</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Maven Compiler settings. -->
+        <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
+        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.source>${maven.compiler.release}</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.release}</maven.compiler.target>
+        <maven.compiler.failOnError>true</maven.compiler.failOnError>
+        <maven.compiler.failOnWarning>false</maven.compiler.failOnWarning>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+
+        <!-- Maven source plugin settings. -->
+        <maven-source-plugin-version>3.2.0</maven-source-plugin-version>
+        <maven.source.skip>true</maven.source.skip>
+
+        <maven-jar-plugin-version>3.2.0</maven-jar-plugin-version>
+        <maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
+        <maven-failsafe-plugin-version>3.0.0-M5</maven-failsafe-plugin-version>
+        <maven-release-plugin-version>3.0.0-M4</maven-release-plugin-version>
+
+        <!-- Code analysis PLugin dependencies. -->
+        <jacoco-maven-plugin-version>0.8.7</jacoco-maven-plugin-version>
+        <maven-pmd-plugin-version>3.14.0</maven-pmd-plugin-version>
+        <spotbugs-maven-plugin-version>4.2.0</spotbugs-maven-plugin-version>
+        <spotbugs.xmlOutput>true</spotbugs.xmlOutput>
+        <spotbugs.effort>Max</spotbugs.effort>
+        <spotbugs.skipEmptyReport>true</spotbugs.skipEmptyReport>
+        <spotbugs.threshold>Low</spotbugs.threshold>
+
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin-version}</version>
+                    <configuration>
+                        <failOnError>${maven.compiler.failOnError}</failOnError>
+                        <failOnWarning>${maven.compiler.failOnWarning}</failOnWarning>
+                        <release>${maven.compiler.release}</release>
+                        <showDeprecation>${maven.compiler.showDeprecation}</showDeprecation>
+                        <showWarnings>${maven.compiler.showWarnings}</showWarnings>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin-version}</version>
+                    <configuration>
+                        <skipIfEmpty>true</skipIfEmpty>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin-version}</version>
+                    <configuration>
+                        <argLine>
+                            --illegal-access=permit
+                        </argLine>
+                        <parallel>methods</parallel>
+                        <threadCount>10</threadCount>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin-version}</version>
+                    <configuration>
+                        <argLine>
+                            --illegal-access=permit
+                        </argLine>
+                        <parallel>suites</parallel>
+                        <threadCount>1</threadCount>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${spotbugs-maven-plugin-version}</version>
+                    <configuration>
+                        <xmlOutput>true</xmlOutput>
+                        <effort>Max</effort>
+                        <skipEmptyReport>true</skipEmptyReport>
+                        <threshold>Low</threshold>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin-version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${spotbugs-maven-plugin-version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven-pmd-plugin-version}</version>
+                <configuration>
+                    <minimumPriority>10</minimumPriority>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/CRoBar-Solutions/devops_maven_parent</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/CRoBar-Solutions/devops_maven_parent</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/CRoBar-Solutions/*</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <profile>
+            <id>build-src-jar</id>
+            <activation>
+                <file>
+                    <exists>src/main/java</exists>
+                </file>
+            </activation>
+
+            <properties>
+                <maven.source.skip>false</maven.source.skip>
+            </properties>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin-version}</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
