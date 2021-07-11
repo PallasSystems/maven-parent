@@ -19,7 +19,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/CRoBar-Solutions/devops_maven_parent.git</connection>
-        <developerConnection>scm:git:git@github.com:CRoBar-Solutions/devops_maven_parent.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/CRoBar-Solutions/devops_maven_parent.git</developerConnection>
         <url>https://github.com/CRoBar-Solutions/devops_maven_parent</url>
         <tag>HEAD</tag>
     </scm>
