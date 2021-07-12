@@ -21,9 +21,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-          server-id: github
-          server-username: ${{ github.actor }}
-          server-password: ${{ github.token }}
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v2
         with:
@@ -33,9 +31,9 @@ jobs:
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
           
       - name: Setup Git Email 
         run: git config --global user.email "github@crobar.uk"
