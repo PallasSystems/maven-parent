@@ -39,10 +39,12 @@ jobs:
         run: git config --global user.email "github@crobar.uk"
       - name: Setup Git User
         run: git config --global user.name "GitHub Action"
-          
+        
+      - uses: s4u/maven-settings-action@v2.4.0
+        with:
+          servers: '[{"id": "github", "username": "${{ github.actor }}", "password": "${{ github.token }}"}, {"id": "main", "username": "${{ github.actor }}", "password": "${{ github.token }}"}]'
+    
       - name: Release with Maven
-        run: mvn -B release:prepare release:perform -s .maven_settings.xml -DreleaseVersion=${{ github.event.release.tag_name }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn -B release:prepare release:perform -DreleaseVersion=${{ github.event.release.tag_name }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
