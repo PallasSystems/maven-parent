@@ -45,6 +45,6 @@ jobs:
           servers: '[{"id": "github", "username": "${{ github.actor }}", "password": "${{ github.token }}"}, {"id": "main", "username": "${{ github.actor }}", "password": "${{ github.token }}"}]'
     
       - name: Release with Maven
-        run: mvn -B release:prepare release:perform -DreleaseVersion=${{ github.event.release.tag_name }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn -B release:prepare release:perform -DreleaseVersion=${{ github.event.release.title }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
