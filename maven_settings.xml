@@ -53,7 +53,7 @@
             <password>${ env.GITHUB_TOKEN }</password>
         </server> 
         <server>
-            <id>snapshot</id>
+            <id>snapshots</id>
             <username>${ env.GITHUB_USER }</username>
             <password>${ env.GITHUB_TOKEN }</password>
         </server> 
