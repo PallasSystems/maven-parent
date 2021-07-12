@@ -43,7 +43,7 @@ jobs:
         run: git config --global user.name "GitHub Action"
           
       - name: Release with Maven
-        run: mvn --batch-mode release:prepare release:perform -s maven_settings.xml -DreleaseVersion=${{ github.event.release.tag_name }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn -B release:prepare release:perform -s .maven_settings.xml -DreleaseVersion=${{ github.event.release.tag_name }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_USER: ${{ github.actor }}
           GITHUB_TOKEN: ${{ github.token }}
