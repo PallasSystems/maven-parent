@@ -173,11 +173,11 @@
 
     <distributionManagement>
         <repository>
-            <id>github</id>
+            <id>main</id>
             <url>https://maven.pkg.github.com/CRoBar-Solutions/devops_maven_parent</url>
         </repository>
         <snapshotRepository>
-            <id>github</id>
+            <id>snapshots</id>
             <url>https://maven.pkg.github.com/CRoBar-Solutions/devops_maven_parent</url>
         </snapshotRepository>
     </distributionManagement>
