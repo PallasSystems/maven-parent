@@ -28,7 +28,7 @@
                 </repository>
             </repositories>
             <pluginRepositories>
-                <repository>
+                <pluginRepository>
                     <id>releases</id>
                     <name>CRoBar GitHub Repository</name>
                     <url>https://maven.pkg.github.com/CRoBar-Solutions/*</url>
@@ -38,7 +38,7 @@
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
-                </repository>
+                </pluginRepository>
             </pluginRepositories>
         </profile>
     </profiles>
@@ -61,6 +61,11 @@
         </server> 
         <server>
             <id>github</id>
+            <username>${ env.GITHUB_USER }</username>
+            <password>${ env.GITHUB_TOKEN }</password>
+        </server>
+        <server>
+            <id>https://github.com</id>
             <username>${ env.GITHUB_USER }</username>
             <password>${ env.GITHUB_TOKEN }</password>
         </server>
