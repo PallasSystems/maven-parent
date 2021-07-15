@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.ref, 'refs/heads/releases/') }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -42,6 +41,7 @@ jobs:
         run: git config --global user.name "GitHub Action"
 
       - name: Release with Maven
+        if: ${{ contains(github.ref, 'refs/heads/releases/') }}
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml release:prepare release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
@@ -49,6 +49,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Push changes
+        if: ${{ contains(github.ref, 'refs/heads/releases/') }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.RELEASE_TOKEN }}
