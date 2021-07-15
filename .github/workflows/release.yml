@@ -32,6 +32,7 @@ jobs:
 
       - name: Extract branch name
         id: extract_branch
+        if: ${{ contains('refs/heads/releases', github.ref) }}
         shell: bash
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/releases-*//')" >> $GITHUB_ENV
 
@@ -41,7 +42,7 @@ jobs:
         run: git config --global user.name "GitHub Action"
 
       - name: Release with Maven
-        if: ${{ contains(github.ref, 'refs/heads/releases/') }}
+        if: ${{ contains('refs/heads/releases', github.ref) }}
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml release:prepare release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
@@ -49,7 +50,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Push changes
-        if: ${{ contains(github.ref, 'refs/heads/releases/') }}
+        if: ${{ contains('refs/heads/releases', github.ref) }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.RELEASE_TOKEN }}
