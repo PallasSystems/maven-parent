@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -29,27 +30,42 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+
+      - name: Extract branch name
+        id: extract_branch
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
+
+      - name: Debug
+        run: echo ${{ env.BRANCH_NAME }}
+
       - name: Build with Maven
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml clean install -DskipTests=true
         env:
           GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Jacoco Coverage
+        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml jacoco:prepare-agent test jacoco:report
+        env:
+          GITHUB_USER: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: SpotBugs
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml spotbugs:spotbugs
         env:
           GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: PMD
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml pmd:pmd pmd:cpd
         env:
           GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Build and analyze
+      - name: SonarCloud Analysis
+        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ github.token }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
