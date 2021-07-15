@@ -5,10 +5,6 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: read
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -42,30 +38,30 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml clean install -DskipTests=true
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USER: ${{ secrets.BUILD_USER }}
+          GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: Jacoco Coverage
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml jacoco:prepare-agent test jacoco:report
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USER: ${{ secrets.BUILD_USER }}
+          GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: SpotBugs
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml spotbugs:spotbugs
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USER: ${{ secrets.BUILD_USER }}
+          GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: PMD
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml pmd:pmd pmd:cpd
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USER: ${{ secrets.BUILD_USER }}
+          GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: SonarCloud Analysis
         run: mvn --batch-mode --settings maven_settings.xml --file pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USER: ${{ secrets.BUILD_USER }}
+          GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
