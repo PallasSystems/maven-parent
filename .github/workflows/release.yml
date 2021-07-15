@@ -1,8 +1,13 @@
 name: Release Maven project
 
 on:
-  release:
+  create:
+    branches:
+      - releases/*
+  push:
     types: [created]
+    branches:
+      - 'releases/**'
   workflow_dispatch:
 jobs:
   build:
