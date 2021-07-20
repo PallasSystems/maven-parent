@@ -27,32 +27,40 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Extract branch name
+        id: extract_branch
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/releases-*//')" >> $GITHUB_ENV
+
+      - name: Debug
+        run: echo ${{ env.BRANCH_NAME }}
+
       - name: Build with Maven
-        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml clean install -DskipTests=true
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml clean install -DskipTests=true
         env:
           GITHUB_USER: ${{ secrets.BUILD_USER }}
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: Jacoco Coverage
-        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml jacoco:prepare-agent test jacoco:report
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml jacoco:prepare-agent test jacoco:report
         env:
           GITHUB_USER: ${{ secrets.BUILD_USER }}
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: SpotBugs
-        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml spotbugs:spotbugs
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml spotbugs:spotbugs
         env:
           GITHUB_USER: ${{ secrets.BUILD_USER }}
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: PMD
-        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml pmd:pmd pmd:cpd
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml pmd:pmd pmd:cpd
         env:
           GITHUB_USER: ${{ secrets.BUILD_USER }}
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
       - name: SonarCloud Analysis
-        run: mvn --batch-mode --settings maven_settings.xml --file pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_USER: ${{ secrets.BUILD_USER }}
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
