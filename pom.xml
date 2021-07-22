@@ -6,6 +6,7 @@
     <groupId>uk.crobar</groupId>
     <artifactId>parent</artifactId>
     <version>0.0.16-SNAPSHOT</version>
+    <name>CroBar SUPER POM</name>
     <packaging>pom</packaging>
 
     <developers>
