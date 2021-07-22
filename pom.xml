@@ -16,6 +16,10 @@
         </developer>
     </developers>
 
+    <organization>
+        <name>CroBar Solutions</name>
+    </organization>
+
     <licenses>
       <license>
         <name>Apache License, Version 2.0</name>
