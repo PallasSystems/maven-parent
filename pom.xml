@@ -58,6 +58,9 @@
         <maven-failsafe-plugin-version>3.0.0-M5</maven-failsafe-plugin-version>
         <maven-release-plugin-version>3.0.0-M4</maven-release-plugin-version>
 
+        <!-- Jacoco Settings. -->
+        <argLine></argLine>
+
         <!-- Code analysis Plugin dependencies. -->
         <jacoco-maven-plugin-version>0.8.7</jacoco-maven-plugin-version>
         <maven-pmd-plugin-version>3.14.0</maven-pmd-plugin-version>
