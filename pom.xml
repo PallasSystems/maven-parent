@@ -118,9 +118,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin-version}</version>
                     <configuration>
-                        <argLine>
-                            --illegal-access=permit
-                        </argLine>
+                        <argLine>@{argLine} --illegal-access=permit</argLine>
                         <parallel>methods</parallel>
                         <threadCount>10</threadCount>
                     </configuration>
@@ -130,9 +128,7 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin-version}</version>
                     <configuration>
-                        <argLine>
-                            --illegal-access=permit
-                        </argLine>
+                        <argLine>@{argLine} --illegal-access=permit</argLine>
                         <parallel>suites</parallel>
                         <threadCount>1</threadCount>
                     </configuration>
