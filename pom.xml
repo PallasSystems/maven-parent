@@ -5,7 +5,7 @@
 
     <groupId>uk.crobar</groupId>
     <artifactId>parent</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.7</version>
     <packaging>pom</packaging>
 
     <developers>
@@ -32,7 +32,7 @@
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>https://github.com/CRoBar-Solutions/devops_maven_parent</url>
-        <tag>0.0.1</tag>
+        <tag>v0.0.7</tag>
     </scm>
 
     <properties>
