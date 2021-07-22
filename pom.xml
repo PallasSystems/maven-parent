@@ -71,7 +71,6 @@
         <!-- Sonar Cloud integration requried Properties. -->
         <sonar.projectKey>CRoBar-Solutions_devops_maven_parent</sonar.projectKey>
         <sonar.projectName>${project.name}</sonar.projectName>
-        <sonar.organization>${project.organization.name}</sonar.organization>
         <sonar.moduleKey>${project.groupId}-${project.artifactId}</sonar.moduleKey>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
