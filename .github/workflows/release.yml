@@ -3,7 +3,7 @@ name: Release Maven project
 on:
   create:
     branches:
-      - releases/*
+      - release/*
   workflow_dispatch:
 jobs:
   build:
@@ -33,9 +33,9 @@ jobs:
 
       - name: Extract branch name
         id: extract_branch
-        if: ${{ contains(github.ref, 'refs/heads/releases') }}
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
         shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/releases-*//')" >> $GITHUB_ENV
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/release-*//')" >> $GITHUB_ENV
 
       - name: Setup Git Email
         run: git config --global user.email "github@crobar.uk"
