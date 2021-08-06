@@ -58,7 +58,7 @@ jobs:
 
       - name: Merge release banch into main
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git merge ${{ env.BRANCH_NAME }}
+        run: git merge origin/release/${{ env.BRANCH_NAME }}
 
       - name: Merge release banch into main
         if: ${{ contains(github.ref, 'refs/heads/release') }}
