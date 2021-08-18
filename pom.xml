@@ -5,7 +5,7 @@
 
     <groupId>uk.crobar</groupId>
     <artifactId>parent</artifactId>
-    <version>0.0.20</version>
+    <version>0.0.21-SNAPSHOT</version>
     <name>CroBar SUPER POM</name>
     <packaging>pom</packaging>
 
@@ -33,7 +33,7 @@
         <connection>scm:git:https://github.com/CRoBar-Solutions/${repository_name}</connection>
         <developerConnection>scm:git:https://github.com/CRoBar-Solutions/${repository_name}</developerConnection>
         <url>https://github.com/CRoBar-Solutions/${repository_name}</url>
-        <tag>v0.0.20</tag>
+        <tag>0.0.1</tag>
     </scm>
 
     <properties>
