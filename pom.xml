@@ -74,7 +74,7 @@
         <spotbugs.skipEmptyReport>true</spotbugs.skipEmptyReport>
         <spotbugs.threshold>Low</spotbugs.threshold>
         <!-- Sonar Cloud integration requried Properties. -->
-        <sonar.projectKey>CRoBar-Solutions_devops_maven_parent</sonar.projectKey>
+        <sonar.projectKey>CRoBar-Solutions_${repository_name}</sonar.projectKey>
         <sonar.projectName>${project.name}</sonar.projectName>
         <sonar.organization>${project.organization.name}</sonar.organization>
         <sonar.moduleKey>${project.groupId}-${project.artifactId}</sonar.moduleKey>
