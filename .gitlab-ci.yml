@@ -36,4 +36,4 @@ release_on_branch:
     strategy: depend
   only:
     variables:
-      - $CI_TARGET_BRANCH_NAME =~ /^release\/.*$/i
+      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
