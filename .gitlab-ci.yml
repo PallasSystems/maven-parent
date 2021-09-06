@@ -9,7 +9,7 @@ stages:
 setup:
   stage: pre
   script:
-    - curl "https://gitlab.com/api/v4/projects/29403976/repository/files/build_verification.yml/raw?ref=master&private_token=${GITLAB_TOKEN}" > build-verification.yml
+    - curl "curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/build_verification.yml?private_token=${GITLAB_TOKEN}" > build-verification.yml
   artifacts:
     paths:
       - build-verification.yml
