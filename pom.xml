@@ -30,14 +30,14 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:https://github.com/CRoBar-Solutions/${repository_name}</connection>
-        <developerConnection>scm:git:https://github.com/CRoBar-Solutions/${repository_name}</developerConnection>
-        <url>https://github.com/CRoBar-Solutions/${repository_name}</url>
+        <connection>scm:git:https://gitlab.com/crobar-solutions/ravenholm/${repository_name}</connection>
+        <developerConnection>scm:git:https://gitlab.com/crobar-solutions/ravenholm/${repository_name}</developerConnection>
+        <url>https://gitlab.com/crobar-solutions/ravenholm/${repository_name}</url>
         <tag>0.0.1</tag>
     </scm>
 
     <properties>
-        <project.scm.id>github</project.scm.id>
+        <project.scm.id>gitlab</project.scm.id>
         <repository_name>devops-maven-parent</repository_name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -220,18 +220,18 @@
     <distributionManagement>
         <repository>
             <id>main</id>
-            <url>https://maven.pkg.github.com/CRoBar-Solutions/${repository_name}/</url>
+            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>https://maven.pkg.github.com/CRoBar-Solutions/${repository_name}/</url>
+            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/CRoBar-Solutions/*</url>
+            <id>gitlab</id>
+            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/*</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -239,8 +239,8 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/CRoBar-Solutions/*</url>
+            <id>gitlab</id>
+            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/*</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
