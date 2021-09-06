@@ -219,19 +219,19 @@
 
     <distributionManagement>
         <repository>
-            <id>main</id>
-            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/</url>
+            <id>ravenholm</id>
+            <url>https://gitlab.com/api/v4/projects/13272294/packages/maven/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/</url>
+            <id>ravenholm</id>
+            <url>https://gitlab.com/api/v4/projects/13272294/packages/maven/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>ravenholm</id>
-            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/*</url>
+            <id>main</id>
+            <url>https://gitlab.com/api/v4/packages/maven</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -239,8 +239,8 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>ravenholm</id>
-            <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/*</url>
+            <id>main</id>
+            <url>https://gitlab.com/api/v4/packages/maven</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
