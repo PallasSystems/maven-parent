@@ -19,6 +19,5 @@ trigger_build:
   trigger:
     include: 
       - artifact: build-verification.yml
-        job: build_verification
+        job: setup
     strategy: depend
-
