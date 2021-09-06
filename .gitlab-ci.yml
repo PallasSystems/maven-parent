@@ -23,6 +23,9 @@ build_verification:
       - artifact: build_verification.yml
         job: setup
     strategy: depend
+  only:
+    refs:
+      - merge_request
 
 release_on_branch:
   stage: triggers
@@ -31,3 +34,6 @@ release_on_branch:
       - artifact: release_on_branch.yml
         job: setup
     strategy: depend
+  only:
+    variables:
+      - $CI_TARGET_BRANCH_NAME =~ /^release\/.*$/i
