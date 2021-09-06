@@ -1,5 +1,5 @@
 include:
-  https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/blob/main/build_verification.yml
+  https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/build_verification.yml
 
 stages:
   - analyse
