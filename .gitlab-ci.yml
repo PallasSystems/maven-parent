@@ -9,17 +9,16 @@ stages:
 setup:
   stage: pre
   script:
-    - mkdir .templates
-    - curl "https://gitlab.com/api/v4/projects/29403976/repository/files/build_verification.yml/raw?ref=master&private_token=${GITLAB_TOKEN}" > templates/build-ci.yml
+    - curl "https://gitlab.com/api/v4/projects/29403976/repository/files/build_verification.yml/raw?ref=master&private_token=${GITLAB_TOKEN}" > build-verification.yml
   artifacts:
     paths:
-      - templates/build-ci.yml
+      - build-verification.yml
 
 trigger_build:
   stage: triggers
   trigger:
     include: 
-      - artifact: templates/build-ci.yml
+      - artifact: build-verification.yml
         job: build_verification
     strategy: depend
 
