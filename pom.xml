@@ -230,7 +230,7 @@
 
     <repositories>
         <repository>
-            <id>gitlab</id>
+            <id>ravenholm</id>
             <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/*</url>
             <snapshots>
                 <enabled>true</enabled>
@@ -239,7 +239,7 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>gitlab</id>
+            <id>ravenholm</id>
             <url>https://gitlab.example.com/api/v4/projects/13272294/packages/maven/*</url>
             <snapshots>
                 <enabled>true</enabled>
