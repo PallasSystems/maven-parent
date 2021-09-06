@@ -1,5 +1,5 @@
 include:
-  'https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/build_verification.yml?private_token=$GITLAB_TOKEN'
+  https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/build_verification.yml?private_token=$GITLAB_TOKEN
 
 stages:
   - analyse
