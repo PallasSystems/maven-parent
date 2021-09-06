@@ -10,9 +10,11 @@ setup:
   stage: pre
   script:
     - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/build_verification.yml?private_token=${GITLAB_TOKEN}" > build-verification.yml
+    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/ci_settings.xml?private_token=${GITLAB_TOKEN}" > ci_settings.xml
   artifacts:
     paths:
       - build-verification.yml
+      - ci_settings.xml
 
 trigger_build:
   stage: triggers
