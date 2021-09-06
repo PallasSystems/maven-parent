@@ -9,15 +9,25 @@ stages:
 setup:
   stage: pre
   script:
-    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/build_verification.yml?private_token=${GITLAB_TOKEN}" > build-verification.yml
+    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}" > build-verification.yml
+    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=${GITLAB_TOKEN}" > release_on_branch.yml
   artifacts:
     paths:
-      - build-verification.yml
+      - build_verification.yml
+      - release_on_branch.yml
 
-trigger_build:
+build_verification:
   stage: triggers
   trigger:
     include: 
-      - artifact: build-verification.yml
+      - artifact: build_verification.yml
+        job: setup
+    strategy: depend
+
+release_on_branch:
+  stage: triggers
+  trigger:
+    include: 
+      - artifact: release_on_branch.yml
         job: setup
     strategy: depend
