@@ -220,11 +220,11 @@
     <distributionManagement>
         <repository>
             <id>ravenholm</id>
-            <url>https://gitlab.com/api/v4/projects/13272294/packages/maven/</url>
+            <url>https://gitlab.com/api/v4/projects/29402172/packages/maven/</url>
         </repository>
         <snapshotRepository>
             <id>ravenholm</id>
-            <url>https://gitlab.com/api/v4/projects/13272294/packages/maven/</url>
+            <url>https://gitlab.com/api/v4/projects/29402172/packages/maven/</url>
         </snapshotRepository>
     </distributionManagement>
 
