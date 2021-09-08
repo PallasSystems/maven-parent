@@ -36,3 +36,10 @@ build_verification:
         job: setup_build_verification
     strategy: depend
 
+release_on_branch:
+  stage: build
+  trigger:
+    include: 
+      - artifact: release_on_branch.yml
+        job: setup_release_on_branch
+    strategy: depend
