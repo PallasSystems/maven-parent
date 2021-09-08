@@ -35,6 +35,10 @@ build_verification:
       - artifact: build_verification.yml
         job: setup_build_verification
     strategy: depend
+  only:
+    refs:
+      - merge_request
+      - main
 
 release_on_branch:
   stage: build
@@ -43,3 +47,6 @@ release_on_branch:
       - artifact: release_on_branch.yml
         job: setup_release_on_branch
     strategy: depend
+  only:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
