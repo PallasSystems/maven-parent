@@ -12,7 +12,11 @@ setup_build_verification:
   artifacts:
     paths:
       - build_verification.yml
-
+  only:
+    refs:
+      - merge_request
+      - main
+      
 setup_release_on_branch:
   stage: .pre
   script:
@@ -28,7 +32,4 @@ build_verification:
       - artifact: build_verification.yml
         job: setup_build_verification
     strategy: depend
-  only:
-    refs:
-      - merge_request
-      - main
+
