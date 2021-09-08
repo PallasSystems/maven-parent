@@ -24,3 +24,4 @@ build_verification:
   only:
     refs:
       - merge_request
+      - main
