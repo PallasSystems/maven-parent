@@ -24,6 +24,9 @@ setup_release_on_branch:
   artifacts:
     paths:
       - release_on_branch.yml
+  only:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
 
 build_verification:
   stage: build
