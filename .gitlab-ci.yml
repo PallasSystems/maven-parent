@@ -7,7 +7,7 @@ stages:
   - report
 
 setup:
-  stage: pre
+  stage: .pre
   script:
     - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}" > build_verification.yml
   artifacts:
