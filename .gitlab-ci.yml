@@ -1,5 +1,10 @@
 stages:
-- build
+  - pre
+  - triggers
+  - build
+  - test
+  - analyse
+  - report
 
 setup_build_verification_file:
   stage: .pre
@@ -24,7 +29,7 @@ setup_release_file:
       - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
 
 build_verification:
-  stage: build
+  stage: triggers
   trigger:
     include: 
       - artifact: build_verification.yml
@@ -35,7 +40,7 @@ build_verification:
       - merge_request
 
 release_on_branch:
-  stage: build
+  stage: triggers
   trigger:
     include: 
       - artifact: release_on_branch.yml
