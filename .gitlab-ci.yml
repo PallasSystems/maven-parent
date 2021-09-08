@@ -1,5 +1,4 @@
 stages:
-  - pre
   - triggers
   - build
   - test
@@ -15,7 +14,7 @@ setup:
       - build_verification.yml
 
 build_verification:
-  stage: triggers
+  stage: build
   trigger:
     include: 
       - artifact: build_verification.yml
