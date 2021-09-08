@@ -5,7 +5,7 @@ stages:
   - analyse
   - report
 
-setup:
+setup_build_verification:
   stage: .pre
   script:
     - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}" > build_verification.yml
@@ -18,7 +18,7 @@ build_verification:
   trigger:
     include: 
       - artifact: build_verification.yml
-        job: setup
+        job: setup_build_verification
     strategy: depend
   only:
     refs:
