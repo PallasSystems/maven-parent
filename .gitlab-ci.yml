@@ -25,7 +25,7 @@ build_verification:
   trigger:
     include: 
       - artifact: build_verification.yml
-        job: setup
+        job: setup_build_verification_file
     strategy: depend
   only:
     refs:
@@ -36,7 +36,7 @@ release_on_branch:
   trigger:
     include: 
       - artifact: release_on_branch.yml
-        job: setup
+        job: setup_release_file
     strategy: depend
   only:
     variables:
