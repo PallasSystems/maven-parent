@@ -8,7 +8,7 @@ stages:
 setup_build_verification:
   stage: .pre
   script:
-    - wget "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}"
+    - curl https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=$GITLAB_TOKEN > build_verification.yml
   artifacts:
     paths:
       - build_verification.yml
@@ -20,7 +20,7 @@ setup_build_verification:
 setup_release_on_branch:
   stage: .pre
   script:
-    - wget "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=${GITLAB_TOKEN}"
+    - curl https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=$GITLAB_TOKEN > release_on_branch.yml
   artifacts:
     paths:
       - release_on_branch.yml
@@ -35,10 +35,6 @@ build_verification:
       - artifact: build_verification.yml
         job: setup_build_verification
     strategy: depend
-  only:
-    refs:
-      - merge_request
-      - main
 
 release_on_branch:
   stage: build
@@ -47,6 +43,3 @@ release_on_branch:
       - artifact: release_on_branch.yml
         job: setup_release_on_branch
     strategy: depend
-  only:
-    variables:
-      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
