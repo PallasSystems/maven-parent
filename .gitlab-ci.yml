@@ -5,6 +5,9 @@ stages:
   - analyse
   - report
 
+# This template uses jdk8 for verifying and deploying images
+image: maven:3.8.2-openjdk-11
+
 retrieve_build_files:
   stage: .pre
   script:
