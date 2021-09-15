@@ -8,7 +8,7 @@ stages:
 setup_build_verification:
   stage: .pre
   script:
-    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}" > build_verification.yml
+    - wget "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}"
   artifacts:
     paths:
       - build_verification.yml
@@ -20,7 +20,7 @@ setup_build_verification:
 setup_release_on_branch:
   stage: .pre
   script:
-    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=${GITLAB_TOKEN}" > release_on_branch.yml
+    - wget "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=${GITLAB_TOKEN}"
   artifacts:
     paths:
       - release_on_branch.yml
