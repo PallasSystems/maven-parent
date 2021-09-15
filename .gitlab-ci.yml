@@ -5,7 +5,7 @@ stages:
   - analyse
   - report
 
-setup_build_verification:
+retrieve_build_files:
   stage: .pre
   script:
     - curl https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=$GITLAB_TOKEN > release_on_branch.yml
@@ -24,7 +24,7 @@ build_verification:
   trigger:
     include: 
       - artifact: build_verification.yml
-        job: setup_build_verification
+        job: retrieve_build_files
     strategy: depend
   only:
     refs:
@@ -36,7 +36,7 @@ release_on_branch:
   trigger:
     include: 
       - artifact: release_on_branch.yml
-        job: setup_release_on_branch
+        job: retrieve_build_files
     strategy: depend
   only:
     variables:
