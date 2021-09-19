@@ -1,46 +1,9 @@
+include:
+ - https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml
+ - https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml
+ 
 stages:
-  - triggers
-  - build
-  - test
-  - analyse
-  - report
-
-# This template uses jdk8 for verifying and deploying images
-image: maven:3.8.2-openjdk-11
-
-retrieve_build_files:
-  stage: .pre
-  script:
-    - curl https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/release_on_branch.yml?private_token=$GITLAB_TOKEN > release_on_branch.yml
-    - curl https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=$GITLAB_TOKEN > build_verification.yml
-  artifacts:
-    paths:
-      - build_verification.yml
-      - release_on_branch.yml
-  only:
-    refs:
-      - merge_request
-      - main
-
-build_verification:
-  stage: build
-  trigger:
-    include: 
-      - artifact: build_verification.yml
-        job: retrieve_build_files
-    strategy: depend
-  only:
-    refs:
-      - merge_request
-      - main
-
-release_on_branch:
-  stage: build
-  trigger:
-    include: 
-      - artifact: release_on_branch.yml
-        job: retrieve_build_files
-    strategy: depend
-  only:
-    variables:
-      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
+ - build
+ - test
+ - analyse
+ - release
