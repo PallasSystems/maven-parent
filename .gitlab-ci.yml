@@ -1,5 +1,5 @@
 include:
- - remote: 'https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml'
+ - remote: 'https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/raw/main/java/maven/build_verification.yml'
  - project: ravenholm/ci-pipelines
    ref: main
    file: java/maven/build_verification.yml 
