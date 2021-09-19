@@ -20,9 +20,11 @@ trigger_build_verification:
   trigger:
     include: 
       - artifact: build_verification.yml
+        job: retrieve_build_files
 
 trigger_release:
   stage: trigger
   trigger:
     include: 
       - artifact: release_on_branch.yml
+        job: retrieve_build_files
