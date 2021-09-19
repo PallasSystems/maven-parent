@@ -1,4 +1,5 @@
 stages:
+ - trigger
  - build
  - test
  - analyse
@@ -14,6 +15,12 @@ retrieve_build_files:
       - build_verification.yml
       - release_on_branch.yml
 
-include:
- - local: build_verification.yml
- - local: release_on_branch.yml
+trigger_build:
+  stage: trigger
+  trigger:
+    include: 
+      - artifact: build_verification.yml
+        job: retrieve_build_files
+      - artifact: release_on_branch.yml
+        job: retrieve_build_files
+    strategy: depend
