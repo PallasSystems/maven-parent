@@ -21,6 +21,10 @@ trigger_build_verification:
     include: 
       - artifact: build_verification.yml
         job: retrieve_build_files
+  only:
+    refs:
+      - merge_request
+      - main
 
 trigger_release:
   stage: trigger
@@ -28,3 +32,6 @@ trigger_release:
     include: 
       - artifact: release_on_branch.yml
         job: retrieve_build_files
+  only:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
