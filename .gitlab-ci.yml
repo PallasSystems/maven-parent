@@ -1,4 +1,5 @@
 include:
+ - 'https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/build_verification.yml?private_token=${GITLAB_TOKEN}'
  - project: ravenholm/ci-pipelines
    ref: main
    file: java/maven/build_verification.yml 
