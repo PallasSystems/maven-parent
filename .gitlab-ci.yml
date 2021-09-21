@@ -13,7 +13,10 @@ retrieve_build_files:
   artifacts:
     paths:
       - build_verification.yml
-      - release_on_branch.yml
+  only:
+    refs:
+      - merge_request
+      - main
 
 trigger_build_verification:
   stage: triggerBuild
