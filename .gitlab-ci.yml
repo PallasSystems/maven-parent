@@ -35,6 +35,10 @@ build:
   artifacts:
     paths:
       - ci_settings.xml
+  only:
+    refs:
+      - merge_request
+      - main
 
 jacoco:
   stage: test
@@ -45,21 +49,37 @@ jacoco:
       junit:
         - "**/target/surefire-reports/TEST-*.xml"
         - "**/target/failsafe-reports/TEST-*.xml"
+  only:
+    refs:
+      - merge_request
+      - main
 
 spotbugs:
   stage: analyse
   script:
     - 'mvn $MAVEN_CLI_OPTS spotbugs:spotbugs -DCI_PROJECT_ID=$CI_PROJECT_ID'
+  only:
+    refs:
+      - merge_request
+      - main
 
 pmd:
   stage: analyse
   script:
     - 'mvn $MAVEN_CLI_OPTS pmd:pmd pmd:cpd -DCI_PROJECT_ID=$CI_PROJECT_ID'
+  only:
+    refs:
+      - merge_request
+      - main
 
 sonarcloud:
   stage: .post
   script:
     - 'mvn $MAVEN_CLI_OPTS verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -DCI_PROJECT_ID=$CI_PROJECT_ID'
+  only:
+    refs:
+      - merge_request
+      - main
 
 release:
   image: maven:3.8.2-openjdk-11
@@ -67,6 +87,8 @@ release:
   only:
     variables:
       - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
+  before_script:
+    - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/ci_settings.xml?private_token=${GITLAB_TOKEN}" > ci_settings.xml
   script:
     - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//\')";
     - 'echo "Exported branch is: $BRANCH_NAME"'
@@ -74,3 +96,6 @@ release:
      - 'git fetch --all'
      - 'git checkout main'
      - 'echo "git merge ${CI_COMMIT_REF_NAME}"'
+  artifacts:
+    paths:
+      - ci_settings.xml
