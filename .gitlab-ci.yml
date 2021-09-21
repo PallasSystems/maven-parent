@@ -31,7 +31,7 @@ build:
   before_script:
     - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/ci_settings.xml?private_token=${GITLAB_TOKEN}" > ci_settings.xml
   script:
-    - 'mvn $MAVEN_CLI_OPTS clean deploy -DskipTests=true -DCI_PROJECT_ID=$CI_PROJECT_ID'
+    - 'mvn $MAVEN_CLI_OPTS clean install -DskipTests=true -DCI_PROJECT_ID=$CI_PROJECT_ID'
   artifacts:
     paths:
       - ci_settings.xml
