@@ -9,9 +9,10 @@ stages:
 trigger_build_verification:
   stage: triggerBuild
   trigger:
-    project: ravenholm/ci-pipelines
-    branch: main
-    file: java/maven/build_verification.yml
+    include:
+      - project: ravenholm/ci-pipelines
+        branch: main
+        file: java/maven/build_verification.yml
   only:
     refs:
       - merge_request
