@@ -62,32 +62,11 @@ sonarcloud:
     - 'mvn $MAVEN_CLI_OPTS verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -DCI_PROJECT_ID=$CI_PROJECT_ID'
 
 release:
-  stage: release
-  script:
-    - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//\')";
-    - 'echo "Exported branch is: $BRANCH_NAME"'
-    - 'mvn $MAVEN_CLI_OPTS --settings ci_settings.xml --file pom.xml release:prepare -DreleaseVersion=$BRANCH_NAME -Dproject.id=$CI_PROJECT_ID -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
-  only:
-    variables:
-      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
-
-fetch_all_branches:
-  stage: .post
-  script:
-     - 'git fetch --all'
-     - 'git checkout main'
-     - 'echo "git merge ${CI_COMMIT_REF_NAME}"'
-     - 'echo "git push origin main"'
-  only:
-    variables:
-      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
-
-release:
   image: maven:3.8.2-openjdk-11
   stage: release
   only:
-    - master
-  when: manual
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
   script:
     - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//\')";
     - 'echo "Exported branch is: $BRANCH_NAME"'
