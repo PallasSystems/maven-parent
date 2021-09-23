@@ -93,7 +93,7 @@ release:
     - git config --global user.name "GitLab Worker"
     - mkdir -p ~/.ssh
     - echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
-    - ssh-keyscan -p 10022 gitlab.com >> ~/.ssh/known_hosts
+    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
   script:
     - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//')";
     - 'mvn $MAVEN_CLI_OPTS --settings ci_settings.xml --file pom.xml release:prepare -DreleaseVersion=$BRANCH_NAME -Dproject.id=$CI_PROJECT_ID -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
@@ -106,6 +106,7 @@ release:
   artifacts:
     paths:
       - ci_settings.xml
+      - target/*.jar
   release:
     name: 'Release $BRANCH_NAME'
     description: 'Created using the release gitlab-ci'
