@@ -89,6 +89,8 @@ release:
       - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
   before_script:
     - curl "https://gitlab.com/crobar-solutions/ravenholm/ci-pipelines/-/raw/main/java/maven/ci_settings.xml?private_token=${GITLAB_TOKEN}" > ci_settings.xml
+    - git config --global user.email "gitlab@crobar.uk"
+    - git config --global user.name "GitLab Worker"
   script:
     - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//')";
     - 'mvn $MAVEN_CLI_OPTS --settings ci_settings.xml --file pom.xml release:prepare -DreleaseVersion=$BRANCH_NAME -Dproject.id=$CI_PROJECT_ID -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
