@@ -25,7 +25,7 @@ cache:
 
 release:
   stage: release
-  image: maven_Build:Latest
+  image: maven:3.8.2-openjdk-11
   before_script:
     - git config --global user.email "gitlab@crobar.uk"
     - git config --global user.name "Gitlab Runner"
