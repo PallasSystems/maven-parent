@@ -29,9 +29,9 @@ release:
   before_script:
     - git config --global user.email "gitlab@crobar.uk"
     - git config --global user.name "Gitlab Runner"
-    - mkdir -p ~/.ssh
-    - echo "$GIT_SSH_PRIV_KEY" > ~/.ssh/id_rsa
-    - ssh-keyscan -p 10022 gitlab.com >> ~/.ssh/known_hosts
+#    - mkdir -p ~/.ssh
+#    - echo "$GIT_SSH_PRIV_KEY" > ~/.ssh/id_rsa
+#    - ssh-keyscan -p 10022 gitlab.com >> ~/.ssh/known_hosts
     - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//')";
     - "git fetch --all"
     - "git checkout -b release/$BRANCH_NAME"
