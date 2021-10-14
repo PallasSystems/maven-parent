@@ -38,21 +38,28 @@ setup_git:
 
 release:
   stage: release
+  image: maven_Build:Latest
+  before_script:
+    - git config --global user.email "gitlab@crobar.uk"
+    - git config --global user.name "Gitlab Runner"
+    - mkdir -p ~/.ssh
+    - echo "$GIT_SSH_PRIV_KEY" > ~/.ssh/id_rsa
+    - ssh-keyscan -p 10022 gitlab.com >> ~/.ssh/known_hosts
+    - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//')";
+    - "git fetch --all"
+    - "git checkout -b release/$BRANCH_NAME"
   script:
-    - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//\')";
     - 'echo "Exported branch is: $BRANCH_NAME"'
     - 'echo "mvn $MAVEN_CLI_OPTS release:prepare -DreleaseVersion=$BRANCH_NAME -Dproject.id=$CI_PROJECT_ID -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar"'
-  only:
-    variables:
-      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
-
-fetch_all_branches:
-  stage: .post
-  script:
-     - 'echo "Exported branch is: $BRANCH_NAME"'
+  after_script:
      - 'echo "git checkout main"'
      - 'echo "git merge $BRANCH_NAME"'
-     - 'echo "git push origin main"'
+     - 'echo "git push origin main"' 
+  artifacts:
+    paths:
+      - target/*.jar
+      - target/*.war
+      - target/*.ear
   only:
     variables:
       - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
