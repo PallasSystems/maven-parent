@@ -23,19 +23,6 @@ cache:
     - .m2/repository
     - .sonar/cache
 
-setup_git:
-  stage: .pre
-  script:
-    - git config --global user.email "gitlab@crobar.uk"
-    - git config --global user.name "Gitlab Runner"
-    - export "BRANCH_NAME=$(echo ${CI_COMMIT_REF_NAME} | tr / - | sed 's/release-*//')";
-    - 'echo "Exported branch is: $BRANCH_NAME"'
-    - "git fetch --all"
-    - "git checkout -b $BRANCH_NAME"
-  only:
-    variables:
-      - $CI_COMMIT_REF_NAME =~ /^release\/.*$/i
-
 release:
   stage: release
   image: maven_Build:Latest
