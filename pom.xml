@@ -3,22 +3,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>uk.crobar</groupId>
+    <groupId>uk.pallas</groupId>
     <artifactId>parent</artifactId>
-    <version>0.0.23-SNAPSHOT</version>
-    <name>CroBar SUPER POM</name>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Pallas SUPER POM</name>
     <packaging>pom</packaging>
 
     <developers>
         <developer>
             <name>Stephen Crocker</name>
-            <organization>CRoBar Solutions</organization>
-            <email>stevecrox@hotmail.com</email>
+            <organization>Pallas</organization>
+            <email>stephen.crocker@pallas.uk</email>
         </developer>
     </developers>
 
     <organization>
-        <name>crobar-solutions</name>
+        <name>Pallas</name>
     </organization>
 
     <licenses>
@@ -30,15 +30,14 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:https://gitlab.com/crobar-solutions/ravenholm/${repository_name}</connection>
-        <developerConnection>scm:git:https://gitlab.com/crobar-solutions/ravenholm/${repository_name}</developerConnection>
-        <url>https://gitlab.com/crobar-solutions/ravenholm/${repository_name}</url>
+        <connection>scm:git:git@github.com:PallasUK/${repository_name}.git</connection>
+        <developerConnection>scm:git:git@github.com:PallasUK/${repository_name}.git</developerConnection>
+        <url>https://github.com/PallasUK/${repository_name}</url>
         <tag>0.0.1</tag>
     </scm>
 
     <properties>
-        <project.scm.id>gitlab</project.scm.id>
-        <repository_name>devops-maven-parent</repository_name>
+        <repository_name>ravenholm-devops-maven-parent</repository_name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Maven Compiler settings. -->
