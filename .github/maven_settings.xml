@@ -16,7 +16,7 @@
             <repositories>
                 <repository>
                     <id>github</id>
-                    <url>https://maven.pkg.github.com/CRoBar-Solutions/*</url>
+                    <url>https://maven.pkg.github.com/PallasUK/*</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
@@ -28,7 +28,7 @@
             <pluginRepositories>
                 <pluginRepository>
                     <id>github</id>
-                    <url>https://maven.pkg.github.com/CRoBar-Solutions/*</url>
+                    <url>https://maven.pkg.github.com/PallasUK/*</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
