@@ -1,9 +1,0 @@
-include:
-  - .gitlab-ci/build_verification.yml
-  - .gitlab-ci/release_on_branch.yml
-
-stages:
-  - build
-  - test
-  - analyse
-  - release
