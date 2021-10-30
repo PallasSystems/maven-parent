@@ -34,14 +34,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Extract branch name
-        id: extract_branch
-        shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/releases-*//')" >> $GITHUB_ENV
-
-      - name: Debug
-        run: echo ${{ env.BRANCH_NAME }}
-
       - name: Build with Maven
         run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml clean install -DskipTests=true
         env:
