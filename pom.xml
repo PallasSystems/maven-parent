@@ -30,8 +30,8 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:git@github.com:${project.organization.name}/${repository_name}.git</connection>
-        <developerConnection>scm:git:git@github.com:${project.organization.name}/${repository_name}.git</developerConnection>
+        <connection>scm:git:git@github.com:${project.organization.name}/${repository_name}</connection>
+        <developerConnection>scm:git:git@github.com:${project.organization.name}/${repository_name}</developerConnection>
         <url>https://github.com/${project.organization.name}/${repository_name}</url>
         <tag>0.0.1</tag>
     </scm>
@@ -58,7 +58,7 @@
         <maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
         <maven-failsafe-plugin-version>3.0.0-M5</maven-failsafe-plugin-version>
         <maven-release-plugin-version>3.0.0-M4</maven-release-plugin-version>
-        <maven-deploy-plugin-version>3.0.0-M1</maven-deploy-plugin-version>
+        <maven-deploy-plugin-version>2.8.2</maven-deploy-plugin-version>
 
         <!-- Jacoco Settings. -->
         <argLine />
@@ -219,17 +219,17 @@
     <distributionManagement>
         <repository>
             <id>main</id>
-            <url>>https://maven.pkg.github.com/${project.organization.name}/${repository_name}</url>
+            <url>https://maven.pkg.github.com/${project.organization.name}/${repository_name}/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>>https://maven.pkg.github.com/${project.organization.name}/${repository_name}</url>
+            <url>https://maven.pkg.github.com/${project.organization.name}/${repository_name}/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>main</id>
+            <id>github</id>
             <url>https://maven.pkg.github.com/${project.organization.name}/*</url>
             <snapshots>
                 <enabled>true</enabled>
@@ -238,7 +238,7 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>main</id>
+            <id>github</id>
             <url>https://maven.pkg.github.com/${project.organization.name}/*</url>
             <snapshots>
                 <enabled>true</enabled>
@@ -246,7 +246,6 @@
         </pluginRepository>
     </pluginRepositories>
     
-
     <profiles>
         <profile>
             <id>build-src-jar</id>
