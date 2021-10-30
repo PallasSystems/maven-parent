@@ -219,18 +219,18 @@
     <distributionManagement>
         <repository>
             <id>ravenholm</id>
-            <url>https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/maven/</url>
+            <url>>https://maven.pkg.github.com/${project.organization.name}/${repository_name}</url>
         </repository>
         <snapshotRepository>
             <id>ravenholm</id>
-            <url>https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/maven/</url>
+            <url>>https://maven.pkg.github.com/${project.organization.name}/${repository_name}</url>
         </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
             <id>main</id>
-            <url>https://gitlab.com/api/v4/packages/maven</url>
+            <url>https://maven.pkg.github.com/${project.organization.name}/*</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -239,7 +239,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>main</id>
-            <url>https://gitlab.com/api/v4/packages/maven</url>
+            <url>https://maven.pkg.github.com/${project.organization.name}/*</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
