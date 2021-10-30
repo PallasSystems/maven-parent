@@ -1,6 +1,12 @@
 name: Build Verification of Maven project
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   build:
