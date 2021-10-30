@@ -30,9 +30,9 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:git@github.com:PallasUK/${repository_name}.git</connection>
-        <developerConnection>scm:git:git@github.com:PallasUK/${repository_name}.git</developerConnection>
-        <url>https://github.com/PallasUK/${repository_name}</url>
+        <connection>scm:git:git@github.com:${project.organization.name}/${repository_name}.git</connection>
+        <developerConnection>scm:git:git@github.com:${project.organization.name}/${repository_name}.git</developerConnection>
+        <url>https://github.com/${project.organization.name}/${repository_name}</url>
         <tag>0.0.1</tag>
     </scm>
 
@@ -218,11 +218,11 @@
 
     <distributionManagement>
         <repository>
-            <id>ravenholm</id>
+            <id>main</id>
             <url>>https://maven.pkg.github.com/${project.organization.name}/${repository_name}</url>
         </repository>
         <snapshotRepository>
-            <id>ravenholm</id>
+            <id>snapshots</id>
             <url>>https://maven.pkg.github.com/${project.organization.name}/${repository_name}</url>
         </snapshotRepository>
     </distributionManagement>
