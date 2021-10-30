@@ -35,7 +35,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build with Maven
-        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml clean deploy -DskipTests=true
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml clean install -DskipTests=true
         env:
           GITHUB_USER: ${{ secrets.BUILD_USER }}
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
