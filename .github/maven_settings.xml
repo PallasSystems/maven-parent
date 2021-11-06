@@ -4,12 +4,12 @@
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
     <activeProfiles>
-        <activeProfile>crobar</activeProfile>
+        <activeProfile>pallas</activeProfile>
     </activeProfiles>
 
     <profiles>
         <profile>
-            <id>crobar</id>
+            <id>pallas</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
