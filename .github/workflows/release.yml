@@ -41,9 +41,17 @@ jobs:
       - name: Setup Git User
         run: git config --global user.name "GitHub Action"
 
+      - name: Prepare Release with Maven
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }}
+        env:
+          GITHUB_USER: ${{ secrets.RELEASE_USER }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       - name: Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml release:prepare release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
