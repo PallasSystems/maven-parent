@@ -5,7 +5,7 @@
 
     <groupId>uk.pallas</groupId>
     <artifactId>parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>Pallas SUPER POM</name>
     <packaging>pom</packaging>
 
@@ -33,7 +33,7 @@
         <connection>scm:git:https://github.com//${project.organization.name}/${repository_name}</connection>
         <developerConnection>scm:git:https://github.com//${project.organization.name}/${repository_name}</developerConnection>
         <url>https://github.com/${project.organization.name}/${repository_name}</url>
-        <tag>0.0.1</tag>
+        <tag>v0.0.1</tag>
     </scm>
 
     <properties>
