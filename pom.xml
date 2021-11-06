@@ -30,8 +30,8 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:git@github.com:${project.organization.name}/${repository_name}</connection>
-        <developerConnection>scm:git:git@github.com:${project.organization.name}/${repository_name}</developerConnection>
+        <connection>scm:git:ssh://git@github.com/${project.organization.name}/${repository_name}</connection>
+        <developerConnection>scm:git:ssh://git@github.com/${project.organization.name}/${repository_name}</developerConnection>
         <url>https://github.com/${project.organization.name}/${repository_name}</url>
         <tag>0.0.1</tag>
     </scm>
