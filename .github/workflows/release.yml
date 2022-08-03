@@ -11,17 +11,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
           java-version: 11
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -37,38 +33,38 @@ jobs:
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/release-*//')" >> $GITHUB_ENV
 
       - name: Setup Git Email
-        run: git config --global user.email "github@crobar.uk"
+        run: git config --global user.email "github@stevecrox.github.io"
       - name: Setup Git User
         run: git config --global user.name "GitHub Action"
 
       - name: Prepare Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }}
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }} -Dskin.version=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,site,site:stage,scm-publish:publish-scm
         env:
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Release with Maven
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dusername=${{ secrets.RELEASE_USER }} -Dpassword=${{ secrets.RELEASE_TOKEN }} -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dskin.version=${{ env.BRANCH_NAME }} -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar,site,site:stage,scm-publish:publish-scm
         env:
+          OSSRH_USER: ${{ secrets.OSSRH_USER }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.RELEASE_USER }}
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Fetch all Branches
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git fetch --all
-
-      - name: Switch to main branch
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git checkout main
-
-      - name: Merge release banch into main
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git merge origin/release/${{ env.BRANCH_NAME }}
-
-      - name: Merge release banch into main
-        if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git push origin main
+      - name: Merge Release branch into Main
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: release/${{ env.BRANCH_NAME }}
+          target_branch: main
+          github_token: ${{ secrets.RELEASE_TOKEN }}
+          message: 'Merging release ${{ env.BRANCH_NAME }} into main'

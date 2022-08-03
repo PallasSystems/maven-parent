@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+    <edit>${project.scm.url}</edit>
+
+    <skin>
+        <groupId>io.github.stevecrox.maven.skins</groupId>
+        <artifactId>bootstrap-site-skin</artifactId>
+        <version>1.0.0</version>
+    </skin>
+
+    <custom>
+        <bootstrapSkin>
+            <contact>
+                <email>info@pallas.uk</email>
+                <mobile>+44 7861 530488</mobile>
+            </contact>
+            <facebook>
+                <groupId>350073883439443</groupId>
+            </facebook>
+            <footer>
+                <style>bg-dark text-light</style>
+            </footer>
+            <gitHub>
+                <projectId>PallasUK/freeman-parent</projectId>
+            </gitHub>
+            <navbar>
+                <enabled>true</enabled>
+                <icon>
+                    <alt>SUPER POM to simplify development of Maven based projects for Freeman.</alt>
+                    <href>./index.html</href>
+                    <src>./images/pallas-image.png</src>
+                </icon>
+            </navbar>
+            <projectbar>
+                <skipBreadcrumb>true</skipBreadcrumb>
+                <skipGenerationDate>true</skipGenerationDate>
+                <skipGenerationVersion>true</skipGenerationVersion>
+            </projectbar>
+            <twitter>
+                <accountId>PallasUK</accountId>
+            </twitter>
+        </bootstrapSkin>
+    </custom>
+
+    <body>
+        <menu ref="parent"/>
+        <menu ref="reports"/>
+        <menu ref="modules"/>
+    </body>
+</project>
