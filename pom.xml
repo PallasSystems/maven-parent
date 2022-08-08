@@ -5,7 +5,7 @@
 
     <groupId>uk.pallas.freeman</groupId>
     <artifactId>parent</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5-SNAPSHOT</version>
     <name>Freeman</name>
     <packaging>pom</packaging>
     <description>SUPER POM to simplify development of Maven based projects for Freeman.</description>
@@ -42,7 +42,7 @@
         <connection>scm:git:https://github.com//${project.organization.name}/${repository_name}</connection>
         <developerConnection>scm:git:https://github.com//${project.organization.name}/${repository_name}</developerConnection>
         <url>https://github.com/${project.organization.name}/${repository_name}</url>
-        <tag>v0.0.4</tag>
+        <tag>v0.0.1</tag>
     </scm>
 
     <issueManagement>
