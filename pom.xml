@@ -83,7 +83,7 @@
         <!-- Details for uploading sites into Repository. -->
         <project.site.repository>PallasUK.github.io</project.site.repository>
         <project.scmpublish.pubScmUrl>scm:git:https://github.com//${project.organization.name}/${project.site.repository}</project.scmpublish.pubScmUrl>
-        <project.staging.directory>${project.build.directory}/staging/${project.artifactId}</project.staging.directory>
+        <project.staging.directory>${project.build.directory}/staging/</project.staging.directory>
         
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
         <project.docs.directory>docs</project.docs.directory>
