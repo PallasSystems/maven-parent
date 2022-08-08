@@ -66,8 +66,8 @@
     </distributionManagement>
 
     <properties>
-        <repository_name>freeman-parent</repository_name>
-        <github_organisation>PallasUK</repository_name>
+        <github_repository_name>freeman-parent</github_repository_name>
+        <github_organisation>PallasUK</github_organisation>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetEncoding>ISO-8859-1</project.build.targetEncoding>
 
