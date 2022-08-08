@@ -40,7 +40,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/${project.organization.name}/${repository_name}</connection>
-        <developerConnection>scm:git:ssh://git@github.com:/${project.organization.name}/${repository_name}.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/${project.organization.name}/${repository_name}.git</developerConnection>
         <url>https://github.com/${project.organization.name}/${repository_name}</url>
         <tag>v0.0.1</tag>
     </scm>
