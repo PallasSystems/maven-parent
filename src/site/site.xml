@@ -20,7 +20,7 @@
                 <groupId>350073883439443</groupId>
             </facebook>
             <footer>
-                <style>bg-dark text-light</style>
+                <style>page-footer font-small pt-4 bg-dark text-light</style>
             </footer>
             <gitHub>
                 <projectId>PallasUK/freeman-parent</projectId>
