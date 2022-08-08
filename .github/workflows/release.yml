@@ -43,8 +43,6 @@ jobs:
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: mvn --batch-mode --settings .github/maven_settings.xml release:prepare -DreleaseVersion=${{ env.BRANCH_NAME }} -Dskin.version=${{ env.BRANCH_NAME }} -Dgoals=clean,deploy,site,site:stage,scm-publish:publish-scm
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
@@ -54,19 +52,24 @@ jobs:
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: mvn --batch-mode --settings .github/maven_settings.xml release:perform -DreleaseVersion=${{ env.BRANCH_NAME }} -Dskin.version=${{ env.BRANCH_NAME }} -Dgoals=clean,jacoco:prepare-agent,deploy,jacoco:report,spotbugs:spotbugs,pmd:pmd,pmd:cpd,org.sonarsource.scanner.maven:sonar-maven-plugin:sonar,site,site:stage,scm-publish:publish-scm
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Merge Release branch into Main
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: release/${{ env.BRANCH_NAME }}
-          target_branch: main
-          github_token: ${{ secrets.RELEASE_TOKEN }}
-          message: 'Merging release ${{ env.BRANCH_NAME }} into main'
+      - name: Fetch all Branches
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: git fetch --all
+
+      - name: Switch to main branch
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: git checkout main
+
+      - name: Merge release banch into main
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: git merge origin/release/${{ env.BRANCH_NAME }}
+
+      - name: Merge release banch into main
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: git push origin main

@@ -35,8 +35,6 @@ jobs:
       - name: Jacoco Coverage
         run: mvn --batch-mode org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.8:report
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
@@ -45,8 +43,6 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --settings .github/maven_settings.xml clean install -DskipTests=true
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
@@ -62,8 +58,6 @@ jobs:
       - name: SpotBugs
         run: mvn --batch-mode com.github.spotbugs:spotbugs-maven-plugin:4.6.0.0:spotbugs -Dspotbugs.xmlOutput=true -Dspotbugs.effort=max -Dspotbugs.failOnError=false -Dspotbugs.threshold=low
         env:
-          OSSRH_USER: ${{ secrets.OSSRH_USER }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
