@@ -21,7 +21,7 @@
     </developers>
 
     <organization>
-        <name>PallasUK</name>
+        <name>Pallas Systems</name>
         <url>https://www.pallas.uk</url>
     </organization>
 
@@ -35,29 +35,29 @@
 
     <ciManagement>
         <system>GitHub</system>
-        <url>https://github.com/${project.organization.name}/${repository_name}/actions</url>
+        <url>https://github.com/${github_organisation}/${github_repository_name}/actions</url>
     </ciManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/${project.organization.name}/${repository_name}</connection>
-        <developerConnection>scm:git:https://github.com/${project.organization.name}/${repository_name}.git</developerConnection>
-        <url>https://github.com/${project.organization.name}/${repository_name}</url>
+        <connection>scm:git:https://github.com/${github_organisation}/${github_repository_name}</connection>
+        <developerConnection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</developerConnection>
+        <url>https://github.com/${github_organisation}/${github_repository_name}</url>
         <tag>v0.0.1</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/${project.organization.name}/${repository_name}/issues</url>
+        <url>https://github.com/${github_organisation}/${github_repository_name}/issues</url>
     </issueManagement>
 
     <distributionManagement>
         <repository>
             <id>main</id>
-            <url>https://maven.pkg.github.com/${project.organization.name}/${repository_name}/</url>
+            <url>https://maven.pkg.github.com/${github_organisation}/${github_repository_name}/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>https://maven.pkg.github.com/${project.organization.name}/${repository_name}/</url>
+            <url>https://maven.pkg.github.com/${github_organisation}/${github_repository_name}/</url>
         </snapshotRepository>
         <site>
             <id>site</id>
@@ -67,6 +67,7 @@
 
     <properties>
         <repository_name>freeman-parent</repository_name>
+        <github_organisation>PallasUK</repository_name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetEncoding>ISO-8859-1</project.build.targetEncoding>
 
@@ -82,7 +83,7 @@
 
         <!-- Details for uploading sites into Repository. -->
         <project.site.repository>PallasUK.github.io</project.site.repository>
-        <project.scmpublish.pubScmUrl>scm:git:https://github.com//${project.organization.name}/${project.site.repository}</project.scmpublish.pubScmUrl>
+        <project.scmpublish.pubScmUrl>scm:git:https://github.com//${github_organisation}/${project.site.repository}</project.scmpublish.pubScmUrl>
         <project.staging.directory>${project.build.directory}/staging/</project.staging.directory>
         
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
@@ -129,9 +130,9 @@
         <spotbugs.threshold>Low</spotbugs.threshold>
 
         <!-- Sonar Cloud integration requried Properties. -->
-        <sonar.projectKey>${project.organization.name}-${repository_name}</sonar.projectKey>
+        <sonar.projectKey>${sonar.organization}-${github_repository_name}</sonar.projectKey>
         <sonar.projectName>${project.name}</sonar.projectName>
-        <sonar.organization>${project.organization.name}</sonar.organization>
+        <sonar.organization>pallassystems</sonar.organization>
         <sonar.moduleKey>${project.groupId}-${project.artifactId}</sonar.moduleKey>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
