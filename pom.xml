@@ -106,7 +106,7 @@
         <!-- Apache Maven Release Plugin Versions. -->
         <checksum-maven-plugin.version>1.11</checksum-maven-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <releaseVersion />
 
         <!-- Apache Maven Reporting Plugin Versions. -->
