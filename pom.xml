@@ -290,7 +290,7 @@
                         <serverId>site</serverId>
                         <content>${project.staging.directory}</content>
                         <pubScmUrl>${project.scmpublish.pubScmUrl}</pubScmUrl>
-                        <subDirectory>${project.groupId}/${project.artifactId}</subDirectory>
+                        <subDirectory>products/${project.groupId}/${project.artifactId}</subDirectory>
                     </configuration>
                 </plugin>
 
