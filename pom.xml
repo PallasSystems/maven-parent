@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>uk.pallas.systems</groupId>
     <artifactId>parent</artifactId>
     <version>0.0.7-SNAPSHOT</version>
-    <name>Freeman</name>
+    <name>Pallas Systems</name>
     <packaging>pom</packaging>
     <description>SUPER POM to simplify development of Maven based projects for Freeman.</description>
-    <url>https://www.pallas.uk/products/docs/uk.pallas.freeman/parent</url>
+    <url>https://www.pallas.uk/products/docs/uk.pallas.systems/parent</url>
     <inceptionYear>2022</inceptionYear>
 
     <developers>
