@@ -30,12 +30,12 @@ Each project contains github actions which reference a [M2 Settings file](../../
 ```xml
 <server>
   <id>github</id>
-  <username>${env.GITHUB_USER}</username>
-  <password>${env.GITHUB_TOKEN}</password>
+  <username>${env.USER}</username>
+  <password>${env.TOKEN}</password>
 </server>
 ```
 
-Needs to be updated with your credentials. All instances of```${env.GITHUB_USER}``` should be replaced with your GitHub Username. Next we need to generate a Personal Access Token so it can be encrypted and stored.
+Needs to be updated with your credentials. All instances of```${env.USER}``` should be replaced with your GitHub Username. Next we need to generate a Personal Access Token so it can be encrypted and stored.
 
 ### Creating a personal access token
 Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
@@ -66,8 +66,8 @@ Within your M2 Settings file ```${user.home}/.m2/settings.xml``` you will find a
 ```xml
 <server>
   <id>github</id>
-  <username>${env.GITHUB_USER}</username>
-  <password>${env.GITHUB_TOKEN}</password>
+  <username>${env.USER}</username>
+  <password>${env.TOKEN}</password>
 </server>
 ```
-Replace all instances of ```${env.GITHUB_TOKEN}``` with the encrypted password you generated in the previous steps.
+Replace all instances of ```${env.TOKEN}``` with the encrypted password you generated in the previous steps.
