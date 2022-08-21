@@ -3,7 +3,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>uk.pallas.freeman</groupId>
+    <groupId>uk.pallas.systems</groupId>
     <artifactId>parent</artifactId>
     <version>0.0.7-SNAPSHOT</version>
     <name>Freeman</name>
@@ -15,7 +15,7 @@
     <developers>
         <developer>
             <name>Stephen Crocker</name>
-            <organization>pallasuk</organization>
+            <organization>Pallas Systems Ltd</organization>
             <email>stephen.crocker AT pallas DOT uk</email>
         </developer>
     </developers>
@@ -66,8 +66,8 @@
     </distributionManagement>
 
     <properties>
-        <github_repository_name>freeman-parent</github_repository_name>
-        <github_organisation>PallasUK</github_organisation>
+        <github_repository_name>maven-parent</github_repository_name>
+        <github_organisation>PallasSystems</github_organisation>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetEncoding>ISO-8859-1</project.build.targetEncoding>
 
