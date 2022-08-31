@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="#generatedBy()" />
+    <title>Pallas Systems &#x2013; Change Log Report</title>
+    <link rel="icon" href="./img/favicons/favicon.ico">
+    <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/maven-base.css" />
+    <link rel="stylesheet" href="./css/prettify.css" />
+    <link rel="stylesheet" href="./css/maven-theme.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div id="projectBarContainer" class="container-fluid">
+<a href="./index.html" id="navbarIconLink" title="SUPER POM to simplify development of Maven based projects for Freeman." class="navbar-brand text-wrap ps-2"><img id="navbarIconImg" src="./images/pallas-image.png"  alt="SUPER POM to simplify development of Maven based projects for Freeman."  title="Navbar Brand Icon" width="32px" height="32px" style=""/> Pallas Systems
+</a>          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarCollapse" class="collapse navbar-collapse justify-content-end">
+            <ul id="navbarList" class="navbar-nav">
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="OverviewMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Overview <b class="caret"></b></a>
+               <ul class="dropdown-menu" aria-labelledby="OverviewMenuDropdown">
+                 <li class="nav-item dropdown-item" id="WelcomeDropdown"><a href="overview/welcome.html" title="Welcome" class="dropdown-item" >Welcome</a></li>
+                 <li class="nav-item dropdown-item" id="Getting StartedDropdown"><a href="overview/getting_started.html" title="Getting Started" class="dropdown-item" >Getting Started</a></li>
+                 <li class="nav-item dropdown-item" id="FAQDropdown"><a href="overview/faq.html" title="FAQ" class="dropdown-item" >FAQ</a></li>
+               </ul>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="DocumentationMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Documentation <b class="caret"></b></a>
+               <ul class="dropdown-menu" aria-labelledby="DocumentationMenuDropdown">
+                 <li class="nav-item dropdown-item" id="User GuideDropdown"><a href="documentation/user_guide.html" title="User Guide" class="dropdown-item" >User Guide</a></li>
+                 <li class="nav-item dropdown-item dropdown-submenu">
+                   <a href="" title="Developer Guide" class="dropdown-item" >Developer Guide</a>
+                   <ul id="DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                     <li class="nav-item dropdown-item"><a href="documentation/developer_guides/developer_guide.html" title="Building Software Project" class="dropdown-item" >Building Software Project</a></li>
+                   </ul>
+                 </li>
+               </ul>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="DevelopersMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developers <b class="caret"></b></a>
+               <ul class="dropdown-menu" aria-labelledby="DevelopersMenuDropdown">
+                 <li class="nav-item dropdown-item" id="BuildingDropdown"><a href="developers/technical/building_project.html" title="Building" class="dropdown-item" >Building</a></li>
+                 <li class="nav-item dropdown-item" id="ReleaseDropdown"><a href="developers/technical/release_project.html" title="Release" class="dropdown-item" >Release</a></li>
+                 <li class="nav-item dropdown-item" id="Development ProcessDropdown"><a href="developers/technical/development_workflow.html" title="Development Process" class="dropdown-item" >Development Process</a></li>
+                 <li class="nav-item dropdown-item" id="Release ManagementDropdown"><a href="developers/technical/release_project.html" title="Release Management" class="dropdown-item" >Release Management</a></li>
+               </ul>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="Project DocumentationMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
+               <ul class="dropdown-menu" aria-labelledby="Project DocumentationMenuDropdown">
+                 <li class="nav-item dropdown-item dropdown-submenu">
+                   <a href="project-info.html" title="Project Information" class="dropdown-item" >Project Information</a>
+                   <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                     <li class="nav-item dropdown-item"><a href="ci-management.html" title="CI Management" class="dropdown-item" >CI Management</a></li>
+                     <li class="nav-item dropdown-item"><a href="dependency-info.html" title="Dependency Information" class="dropdown-item" >Dependency Information</a></li>
+                     <li class="nav-item dropdown-item"><a href="distribution-management.html" title="Distribution Management" class="dropdown-item" >Distribution Management</a></li>
+                     <li class="nav-item dropdown-item"><a href="index.html" title="About" class="dropdown-item" >About</a></li>
+                     <li class="nav-item dropdown-item"><a href="issue-management.html" title="Issue Management" class="dropdown-item" >Issue Management</a></li>
+                     <li class="nav-item dropdown-item"><a href="licenses.html" title="Licenses" class="dropdown-item" >Licenses</a></li>
+                     <li class="nav-item dropdown-item"><a href="plugin-management.html" title="Plugin Management" class="dropdown-item" >Plugin Management</a></li>
+                     <li class="nav-item dropdown-item"><a href="plugins.html" title="Plugins" class="dropdown-item" >Plugins</a></li>
+                     <li class="nav-item dropdown-item"><a href="scm.html" title="Source Code Management" class="dropdown-item" >Source Code Management</a></li>
+                     <li class="nav-item dropdown-item"><a href="summary.html" title="Summary" class="dropdown-item" >Summary</a></li>
+                     <li class="nav-item dropdown-item"><a href="team.html" title="Team" class="dropdown-item" >Team</a></li>
+                   </ul>
+                 </li>
+                 <li class="nav-item dropdown-item dropdown-submenu">
+                   <a href="project-reports.html" title="Project Reports" class="dropdown-item" >Project Reports</a>
+                   <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                     <li class="nav-item dropdown-item"><a href="jacoco-aggregate/index.html" title="JaCoCo Aggregate" class="dropdown-item" >JaCoCo Aggregate</a></li>
+                     <li class="nav-item dropdown-item"><a title="Change Log" class="dropdown-item">Change Log</a></li>
+                     <li class="nav-item dropdown-item"><a href="file-activity.html" title="File Activity" class="dropdown-item" >File Activity</a></li>
+                     <li class="nav-item dropdown-item"><a href="dev-activity.html" title="Developer Activity" class="dropdown-item" >Developer Activity</a></li>
+                     <li class="nav-item dropdown-item"><a href="surefire-report.html" title="Surefire Report" class="dropdown-item" >Surefire Report</a></li>
+                   </ul>
+                 </li>
+               </ul>
+             </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav id="projectBar" class="navbar py-0 navbar-dark bg-dark" aria-label="projectBarList">
+        <div id="projectBarContainer" class="container-fluid">
+          <div id="breadcrumbSpacer"  class="col justify-content-start"></div>
+          <div id="projectBaDateVersionContainer" class="justify-content-end">
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="p-5 rounded">
+<section>
+<h2><a name="Change_Log_Report"></a>Change Log Report</h2>
+<p>Total number of changed sets: 1</p><section>
+<h3><a name="Changes_between_08-01-2022_and_09-01-2022"></a>Changes between 08-01-2022 and 09-01-2022</h3>
+<p>Total commits: 53<br />Total number of files changed: 23</p>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Timestamp</th>
+<th>Author</th>
+<th>Details</th></tr>
+<tr class="b">
+<td>2022-08-31 21:43:04</td>
+<td>Stephen Crocker &lt;92754842+stevecrocker@users.noreply.github.com&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/CNAME">docs/<b>CNAME</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit25ed98f30bb905d536258043731a293d3eb46388">v 25ed98f30bb905d536258043731a293d3eb46388</a><br /><br />Create CNAME</td></tr>
+<tr class="a">
+<td>2022-08-31 21:36:43</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit6f416a820aab3310fc0022e9db9e5175734f1aa1">v 6f416a820aab3310fc0022e9db9e5175734f1aa1</a><br /><br />Changed the organistion name</td></tr>
+<tr class="b">
+<td>2022-08-31 21:28:22</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit825cc9f3eed020756e61bfd929f33063ff8fe9a0">v 825cc9f3eed020756e61bfd929f33063ff8fe9a0</a><br /><br />Added code commenter</td></tr>
+<tr class="a">
+<td>2022-08-31 21:24:01</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitf570a659abb4949367959b8b04418519f012816c">v f570a659abb4949367959b8b04418519f012816c</a><br /><br />Reverted change back into the system</td></tr>
+<tr class="b">
+<td>2022-08-31 21:09:36</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitdd2b0018e6b6256e00e1462649601c81f72b28a3">v dd2b0018e6b6256e00e1462649601c81f72b28a3</a><br /><br />Update the release directory to use the gh-pages branch</td></tr>
+<tr class="a">
+<td>2022-08-31 20:52:01</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit3ac4ba1a7f1e719ec2dfa9bf32314c72adf1daac">v 3ac4ba1a7f1e719ec2dfa9bf32314c72adf1daac</a><br /><br />[maven-release-plugin] prepare release v0.1.0</td></tr>
+<tr class="b">
+<td>2022-08-22 22:10:49</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitacd8bbd048a4e8a1200ad75548f04c245404cc0b">v acd8bbd048a4e8a1200ad75548f04c245404cc0b</a><br /><br />Updated to try and get the Site descriptor in the project.</td></tr>
+<tr class="a">
+<td>2022-08-22 21:15:06</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit48d8cc72debbd3a0d487a2698dfd390ba14aeb3c">v 48d8cc72debbd3a0d487a2698dfd390ba14aeb3c</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="b">
+<td>2022-08-22 21:15:04</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit90d1eb5a13d557463829bf50b09848939d04ebd9">v 90d1eb5a13d557463829bf50b09848939d04ebd9</a><br /><br />[maven-release-plugin] prepare release v0.0.9</td></tr>
+<tr class="a">
+<td>2022-08-21 21:35:52</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitf4064419a15b45f78254d2779514a7dcb0958eb1">v f4064419a15b45f78254d2779514a7dcb0958eb1</a><br /><br />Placing the results within the products directory to keep it manageable</td></tr>
+<tr class="b">
+<td>2022-08-21 21:34:15</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/infrastrcture/configure_maven.md">docs/developers/infrastrcture/<b>configure_maven.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitbda621c4b68f67263763600f9c53d0564cc0e9ce">v bda621c4b68f67263763600f9c53d0564cc0e9ce</a><br /><br />Switched so my token doesn't get inserted when generating the page.</td></tr>
+<tr class="a">
+<td>2022-08-21 20:42:19</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit89af0ee196acec2bf9172553bcfa79a4d3179d92">v 89af0ee196acec2bf9172553bcfa79a4d3179d92</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="b">
+<td>2022-08-21 20:42:17</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit5cbd35b496818a1d98c743f612b374ca0f351e97">v 5cbd35b496818a1d98c743f612b374ca0f351e97</a><br /><br />[maven-release-plugin] prepare release v0.0.8</td></tr>
+<tr class="a">
+<td>2022-08-21 20:08:31</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit1c277203d47afba53ce48fd3375d420edc333316">v 1c277203d47afba53ce48fd3375d420edc333316</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="b">
+<td>2022-08-21 20:08:30</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd3b37baaceb756a9c90dc1992aaae9910a79f837">v d3b37baaceb756a9c90dc1992aaae9910a79f837</a><br /><br />[maven-release-plugin] prepare release v0.0.7</td></tr>
+<tr class="a">
+<td>2022-08-21 17:34:13</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit2356ad1c2b0c8598a733acb82d6c8e7def89b27c">v 2356ad1c2b0c8598a733acb82d6c8e7def89b27c</a><br /><br />Updated the URL and the Name</td></tr>
+<tr class="b">
+<td>2022-08-21 17:22:59</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit65370a9fde915a68ae7a32370660b382faa118b6">v 65370a9fde915a68ae7a32370660b382faa118b6</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit65370a9fde915a68ae7a32370660b382faa118b6">v 65370a9fde915a68ae7a32370660b382faa118b6</a><br /><br />Updated to the organisation name</td></tr>
+<tr class="a">
+<td>2022-08-09 19:43:53</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/release.yml">.github/workflows/<b>release.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit0bd22900645679ad2e0af6785cbc4122485d9657">v 0bd22900645679ad2e0af6785cbc4122485d9657</a><br /><br />Turned off GPGSign</td></tr>
+<tr class="b">
+<td>2022-08-09 19:39:36</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit9be0d2c75f215d41f0aa88cd261fb02bbe47e200">v 9be0d2c75f215d41f0aa88cd261fb02bbe47e200</a><br /><br />Reverted version back</td></tr>
+<tr class="a">
+<td>2022-08-09 19:38:58</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/build_verification.yml">.github/workflows/<b>build_verification.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit26cb424aadf48d93163656e03c6aba3774f14ec4">v 26cb424aadf48d93163656e03c6aba3774f14ec4</a><br /><br />Removed the maven cache</td></tr>
+<tr class="b">
+<td>2022-08-09 18:48:44</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit50932a611162682b72fa032012656abcba37d8e2">v 50932a611162682b72fa032012656abcba37d8e2</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="a">
+<td>2022-08-09 18:48:42</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit659a36b7e03c8caa0d8abe9770c754257720f296">v 659a36b7e03c8caa0d8abe9770c754257720f296</a><br /><br />[maven-release-plugin] prepare release v0.0.6</td></tr>
+<tr class="b">
+<td>2022-08-08 22:48:21</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit6856189a8fa476b97b1878be215acfbc57d41c9d">v 6856189a8fa476b97b1878be215acfbc57d41c9d</a><br /><br />Fixed element closing.</td></tr>
+<tr class="a">
+<td>2022-08-08 22:46:31</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitabba506318e5a2d76ceec353f30d924bf0e18ef3">v abba506318e5a2d76ceec353f30d924bf0e18ef3</a><br /><br />Separated GitHub/SonarQube variables.</td></tr>
+<tr class="b">
+<td>2022-08-08 22:35:44</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd6b47d463faa353b3c2b9f8757bdc31421872a4f">v d6b47d463faa353b3c2b9f8757bdc31421872a4f</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/release.yml">.github/workflows/<b>release.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd6b47d463faa353b3c2b9f8757bdc31421872a4f">v d6b47d463faa353b3c2b9f8757bdc31421872a4f</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd6b47d463faa353b3c2b9f8757bdc31421872a4f">v d6b47d463faa353b3c2b9f8757bdc31421872a4f</a><br /><br />Trying to get autosign working</td></tr>
+<tr class="a">
+<td>2022-08-08 22:28:04</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitdf87cd3adcff7334e9b1a9b010309dabc4cca0da">v df87cd3adcff7334e9b1a9b010309dabc4cca0da</a><br /><br />Updted developerConnection</td></tr>
+<tr class="b">
+<td>2022-08-08 22:25:24</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit6208d28f90c08bc7b5e8942754f067d959a0331d">v 6208d28f90c08bc7b5e8942754f067d959a0331d</a><br /><br />Try change to ssh control</td></tr>
+<tr class="a">
+<td>2022-08-08 22:14:49</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit2823c4cf4b60c2d411b1ac04bd6890990c2e4134">v 2823c4cf4b60c2d411b1ac04bd6890990c2e4134</a><br /><br />Reverted version back</td></tr>
+<tr class="b">
+<td>2022-08-08 22:11:32</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitedc9cc4e4eaa91a71de72149a260782e2dc73440">v edc9cc4e4eaa91a71de72149a260782e2dc73440</a><br /><br />Updated signtag to false, since it doesn't work atm</td></tr>
+<tr class="a">
+<td>2022-08-08 22:05:51</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitb2f39a5c97ddc3844b33fb5f28e9dfa1c8e44b9c">v b2f39a5c97ddc3844b33fb5f28e9dfa1c8e44b9c</a><br /><br />Added Sign tag</td></tr>
+<tr class="b">
+<td>2022-08-08 22:02:44</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit040a1b3c85439ce09ecde01f85d869be4b47538d">v 040a1b3c85439ce09ecde01f85d869be4b47538d</a><br /><br />Updated Maven-release plugin to latest milestone</td></tr>
+<tr class="a">
+<td>2022-08-08 21:58:46</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitdb3fa741f573fe2c497ab61e096c4770ec441e31">v db3fa741f573fe2c497ab61e096c4770ec441e31</a><br /><br />Upped the compiler to Java 11</td></tr>
+<tr class="b">
+<td>2022-08-08 21:37:37</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/src/site/site.xml">src/site/<b>site.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit016f5c43bc76311a6d87c64e5c2260740c99311e">v 016f5c43bc76311a6d87c64e5c2260740c99311e</a><br /><br />Updated site.xml footer documentation</td></tr>
+<tr class="a">
+<td>2022-08-08 21:34:22</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit55662bd5b8c5e534d84dc0d84b915f5b40f9ac45">v 55662bd5b8c5e534d84dc0d84b915f5b40f9ac45</a><br /><br />Basic Freeman Introduction page.</td></tr>
+<tr class="b">
+<td>2022-08-08 21:28:14</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit830e51d1119b33960579ece34f766ae440a92629">v 830e51d1119b33960579ece34f766ae440a92629</a><br /><br />Added docs integration piece</td></tr>
+<tr class="a">
+<td>2022-08-08 20:40:45</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commite51691b4603d423c1f6414a194e5c564488bfd0a">v e51691b4603d423c1f6414a194e5c564488bfd0a</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="b">
+<td>2022-08-08 20:40:42</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commita88c72d12b85305359b68dd04d28785cfe8ea5c2">v a88c72d12b85305359b68dd04d28785cfe8ea5c2</a><br /><br />[maven-release-plugin] prepare release v0.0.5</td></tr>
+<tr class="a">
+<td>2022-08-08 19:41:47</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/build_verification.yml">.github/workflows/<b>build_verification.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit85cfa339fbbdd82e8ff4cfc5adcc71443a86f9c1">v 85cfa339fbbdd82e8ff4cfc5adcc71443a86f9c1</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/release.yml">.github/workflows/<b>release.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit85cfa339fbbdd82e8ff4cfc5adcc71443a86f9c1">v 85cfa339fbbdd82e8ff4cfc5adcc71443a86f9c1</a><br /><br />Switched the merge code to the older version of the merge branch</td></tr>
+<tr class="b">
+<td>2022-08-08 18:49:42</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitefcd82c0ef538965541916be290950b0d1dd6f02">v efcd82c0ef538965541916be290950b0d1dd6f02</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="a">
+<td>2022-08-08 18:49:40</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit5be4c841b557550e85522e8218470543715685f9">v 5be4c841b557550e85522e8218470543715685f9</a><br /><br />[maven-release-plugin] prepare release v0.0.4</td></tr>
+<tr class="b">
+<td>2022-08-08 18:19:54</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit57fc6e72445d5d7cb3cb4a6492ae2fab91ce6d91">v 57fc6e72445d5d7cb3cb4a6492ae2fab91ce6d91</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="a">
+<td>2022-08-08 18:19:52</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit9711e8fe682e60d2135091e1d3a1b602bfa5760c">v 9711e8fe682e60d2135091e1d3a1b602bfa5760c</a><br /><br />[maven-release-plugin] prepare release v0.0.3</td></tr>
+<tr class="b">
+<td>2022-08-08 18:13:34</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitf9254e07ac678b585abfa8d089678ec4dc95ecf7">v f9254e07ac678b585abfa8d089678ec4dc95ecf7</a><br /><br />[maven-release-plugin] prepare for next development iteration</td></tr>
+<tr class="a">
+<td>2022-08-08 18:13:33</td>
+<td>GitHub Action &lt;pallas-ci@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit156f46efd2b8a8ba15ee10b308f1f63a1d941fdd">v 156f46efd2b8a8ba15ee10b308f1f63a1d941fdd</a><br /><br />[maven-release-plugin] prepare release v0.0.2</td></tr>
+<tr class="b">
+<td>2022-08-08 17:37:59</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/release.yml">.github/workflows/<b>release.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit51b1fdcbaa5baae30afe6c7f8225d3e19335bb1c">v 51b1fdcbaa5baae30afe6c7f8225d3e19335bb1c</a><br /><br />Changed the user to see what happens</td></tr>
+<tr class="a">
+<td>2022-08-08 17:27:03</td>
+<td>Stephen Crocker &lt;92754842+stevecrocker@users.noreply.github.com&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/src/site/site.xml">src/site/<b>site.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit3685b4f9e30a5faca3cc6a4ebd278ece8f6ebb9a">v 3685b4f9e30a5faca3cc6a4ebd278ece8f6ebb9a</a><br /><br />Update site.xml</td></tr>
+<tr class="b">
+<td>2022-08-08 17:26:36</td>
+<td>Stephen Crocker &lt;92754842+stevecrocker@users.noreply.github.com&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/site.xml">docs/<b>site.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit33a83376f7508e44943406ccfc924a56547a088d">v 33a83376f7508e44943406ccfc924a56547a088d</a><br /><br />Delete site.xml</td></tr>
+<tr class="a">
+<td>2022-08-08 17:25:23</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/infrastrcture/configure_maven.md">docs/developers/infrastrcture/<b>configure_maven.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/infrastrcture/install_maven.md">docs/developers/infrastrcture/<b>install_maven.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/technical/building_project.md">docs/developers/technical/<b>building_project.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/technical/development_workflow.md">docs/developers/technical/<b>development_workflow.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/technical/release_management.md">docs/developers/technical/<b>release_management.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/developers/technical/release_project.md">docs/developers/technical/<b>release_project.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/documentation/developer_guides/developer_guide.md">docs/documentation/developer_guides/<b>developer_guide.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/documentation/exampleSite.png">docs/documentation/<b>exampleSite.png</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/documentation/user_guide.md">docs/documentation/<b>user_guide.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/index.md">docs/<b>index.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/overview/faq.md">docs/overview/<b>faq.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/overview/getting_started.md">docs/overview/<b>getting_started.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/overview/welcome.md">docs/overview/<b>welcome.md</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/docs/site.xml">docs/<b>site.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitd82021e5b455e8c2f5dd4d9069618df801f081b3">v d82021e5b455e8c2f5dd4d9069618df801f081b3</a><br /><br />Basic website</td></tr>
+<tr class="b">
+<td>2022-08-08 16:13:46</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/release.yml">.github/workflows/<b>release.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit97a732f14361d7ee17d2d32a4ef5a98b12e40575">v 97a732f14361d7ee17d2d32a4ef5a98b12e40575</a><br /><br />Updated to be inalignment with the build verification file</td></tr>
+<tr class="a">
+<td>2022-08-08 14:24:57</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/build_verification.yml">.github/workflows/<b>build_verification.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit86b6019a05099807d21d567dda23b1455dfc14fb">v 86b6019a05099807d21d567dda23b1455dfc14fb</a><br /><br />Update the setup-java action</td></tr>
+<tr class="b">
+<td>2022-08-07 22:36:40</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit36b6f32d0a0ab19612bf39590222514854a8e27c">v 36b6f32d0a0ab19612bf39590222514854a8e27c</a><br /><br />Reverted change</td></tr>
+<tr class="a">
+<td>2022-08-07 22:32:25</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commitae0094980b5093b806c3e6c0c26d2723b47c8c8d">v ae0094980b5093b806c3e6c0c26d2723b47c8c8d</a><br /><br />Set the priviate key field</td></tr>
+<tr class="b">
+<td>2022-08-03 22:14:23</td>
+<td>Stephen C &lt;stephen.crocker@pallas.uk&gt;</td>
+<td><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/maven_settings.xml">.github/<b>maven_settings.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/build_verification.yml">.github/workflows/<b>build_verification.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/.github/workflows/release.yml">.github/workflows/<b>release.yml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/src/site/resources/css/maven-theme.css">src/site/resources/css/<b>maven-theme.css</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/src/site/resources/css/site.css">src/site/resources/css/<b>site.css</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/src/site/resources/images/pallas-image.png">src/site/resources/images/<b>pallas-image.png</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><a class="externalLink" href="https://github.com/PallasSystems/maven-parent/tree/master/src/site/site.xml">src/site/<b>site.xml</b></a> <a class="externalLink" href="https://github.com/PallasSystems/maven-parent/commit78992aaf25cca93ff5a4f3c439f8bd2d8651eaad">v 78992aaf25cca93ff5a4f3c439f8bd2d8651eaad</a><br /><br />Updated the Site.xml and POM to the latest standard</td></tr></table></section></section>
+      </div>
+    </main>
+
+  <footer class="page-footer font-small pt-4 bg-dark text-light">
+    <div class="container-fluid text-md-left">
+        <div class="row">
+          <div id="ContactDetailsDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
+            <h5 class="text-uppercase fw-bold">Contact</h5>
+            <a id="bootstrapSkin.contact.emailLinkContact" mailto:${orgEmail} class=" my-0"><i id="bootstrapSkin.contact.emailLinkIcon" class=" bi-envelope px-1 px-1"></i>info@pallas.uk</a>
+            <p id="bootstrapSkin.contact.mobileContact" class=" my-0"><i id="bootstrapSkin.contact.mobileIcon" class=" bi-phone px-1 px-1"></i>+44 7861 530488</p>
+          </div>
+          <div id="socialMediaDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
+            <div>Get connected with us on social networks</div>
+            <div>
+            <a id="bootstrapSkin.facebook.groupIdLinkContact" https://www.facebook.com/groups/350073883439443 class=" p-1"><i id="bootstrapSkin.facebook.groupIdLinkIcon" class=" bi-facebook text-dark px-1"></i></a>
+            <a id="bootstrapSkin.twitter.accountIdLinkContact" https://twitter.com/PallasUK class=" p-1"><i id="bootstrapSkin.twitter.accountIdLinkIcon" class=" bi-twitter text-dark px-1"></i></a>
+            <a id="bootstrapSkin.gitHub.projectIdLinkContact" https://github.com/${gitHubOrg}/${gitHubRepo} class=" p-1"><i id="bootstrapSkin.gitHub.projectIdLinkIcon" class=" bi-github text-dark px-1"></i></a>
+            </div>
+            <div id="copyrightDiv" class="pt-3">
+              <p>&#169;
+      2022
+<a href="https://www.pallas.uk">Pallas Systems</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/prettify.js"></script>
+
+    <!-- Used to enable the code-prettify running on the view. -->
+    <script>
+        addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+    </script>
+  </body>
