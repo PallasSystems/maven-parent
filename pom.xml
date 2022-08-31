@@ -65,6 +65,10 @@
     </distributionManagement>
 
     <properties>
+        <!-- Name of the projects to use as part of the site description. -->
+        <github_repository_name>maven-parent</github_repository_name>
+        <github_organisation>PallasUK</github_organisation>
+        <!-- Project documentation
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.targetEncoding>ISO-8859-1</project.build.targetEncoding>
 
