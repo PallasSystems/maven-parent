@@ -60,7 +60,7 @@
         </snapshotRepository>
         <site>
             <id>site</id>
-            <url>${project.scmpublish.pubScmUrl}</url>
+            <url>${scm.connection}</url>
         </site>
     </distributionManagement>
 
@@ -87,9 +87,11 @@
         <project.docs.directory>docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
         <project.staging.directory>${project.build.directory}/staging/</project.staging.directory>
+        <uk.pallas.systems.site.version>0.0.3</uk.pallas.systems.site.version>
 
         <!-- Apache Maven Build Plugin Versions. -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
 
@@ -156,6 +158,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${maven-resources-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -268,7 +275,7 @@
                     <version>${maven-site-plugin.version}</version>
                     <configuration>
                         <pomPackagingOnly>false</pomPackagingOnly>
-                        <topSiteURL>${project.scmpublish.pubScmUrl}</topSiteURL>
+                        <topSiteURL>${scm.connection}</topSiteURL>
                         <workingDirectory>${project.build.interim.site.directory}</workingDirectory>
                     </configuration>
                     <executions>
@@ -529,6 +536,31 @@
                                         </resource>
                                     </resources>
                                     <outputDirectory>${project.build.interim.site.directory}</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>unpack-site-resources</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>uk.pallas.systems.site</groupId>
+                                            <artifactId>resources</artifactId>
+                                            <version>${uk.pallas.systems.site.version}</version>
+                                            <type>jar</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
                                 </configuration>
                             </execution>
                         </executions>
