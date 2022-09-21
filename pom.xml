@@ -8,7 +8,7 @@
     <name>Pallas Systems</name>
     <packaging>pom</packaging>
     <description>SUPER POM to simplify development of Maven based projects for Freeman.</description>
-    <url>https://www.pallas.uk/products/docs/uk.pallas.systems/parent</url>
+    <url>https://pallassystems.github.io/maven-parent/</url>
     <inceptionYear>2022</inceptionYear>
 
     <developers>
@@ -38,7 +38,7 @@
     </ciManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/${github_organisation}/${github_repository_name}</connection>
+        <connection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</connection>
         <developerConnection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</developerConnection>
         <url>https://github.com/${github_organisation}/${github_repository_name}</url>
         <tag>v0.0.1</tag>
@@ -60,7 +60,7 @@
         </snapshotRepository>
         <site>
             <id>site</id>
-            <url>${scm.connection}</url>
+            <url>./</url>
         </site>
     </distributionManagement>
 
@@ -86,8 +86,14 @@
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
         <project.docs.directory>docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
-        <project.staging.directory>${project.build.directory}/staging/</project.staging.directory>
         <uk.pallas.systems.site.version>0.0.3</uk.pallas.systems.site.version>
+        <!-- Used to publish the maven site. -->
+        <scmpublish.scm.branch>gh-pages</scmpublish.scm.branch>
+        <scmpublish.pubScmUrl>${project.scm.connection}</scmpublish.pubScmUrl>
+        <scmpublish.content>${project.build.directory}/staging/</scmpublish.content>
+        <!-- GitHub Changelog Parameters -->
+        <displayFileRevDetailUrl>${project.scm.url}/tree/master/%FILE%</displayFileRevDetailUrl>
+        <displayChangeSetDetailUrl>${project.scm.url}/commit</displayChangeSetDetailUrl>
 
         <!-- Apache Maven Build Plugin Versions. -->
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
@@ -275,7 +281,7 @@
                     <version>${maven-site-plugin.version}</version>
                     <configuration>
                         <pomPackagingOnly>false</pomPackagingOnly>
-                        <topSiteURL>${scm.connection}</topSiteURL>
+                        <topSiteURL>${project.url}</topSiteURL>
                         <workingDirectory>${project.build.interim.site.directory}</workingDirectory>
                     </configuration>
                     <executions>
@@ -293,10 +299,7 @@
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${maven-scm-publish-plugin.version}</version>
                     <configuration>
-                        <content>${project.staging.directory}</content>
                         <checkinComment>Updating Site documentation</checkinComment>
-                        <pubScmUrl>${project.scm.connection}</pubScmUrl>
-                        <scmBranch>gh-pages</scmBranch>
                         <serverId>site</serverId>
                     </configuration>
                 </plugin>

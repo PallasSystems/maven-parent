@@ -16,6 +16,8 @@
             <properties>
                 <gpg.keyname>${env.GPG_KEY_ID}</gpg.keyname>
                 <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+                <keyname>${env.GPG_KEY_ID}</keyname>
+                <passphrase>${env.GPG_PASSPHRASE}</passphrase>
                 <username>${env.GITHUB_USER}</username>
                 <password>${env.GITHUB_TOKEN}</password>
                 <signTag>true</signTag>
