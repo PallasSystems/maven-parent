@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../css/maven-theme.css" />
     <link rel="stylesheet" href="../../css/site.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -99,8 +99,8 @@
       </nav>
     </header>
 
-    <main class="container">
-      <div class="p-5 rounded">
+    <main class="flex-shrink-0" role="main">
+      <div class="container rounded">
 <h1>Configure Maven</h1>
 <p>This section will walk you though how to configure and secure Apache Maven.</p><section>
 <h2><a name="Pre-requisites"></a>Pre-requisites</h2>
@@ -119,7 +119,7 @@
 
 <div class="source"><pre class=" prettyprint linenums"><code class="language-bash">{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
 </code></pre></div>
-<p>Store this password in the <code>/home/runner/.m2/settings-security.xml</code> it should look like</p>
+<p>Store this password in the <code>/home/stevecrocker/.m2/settings-security.xml</code> it should look like</p>
 
 <div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;settingsSecurity&gt;
   &lt;master&gt;{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}&lt;/master&gt;
@@ -127,15 +127,15 @@
 </code></pre></div>
 <p>When this is done, you can start encrypting existing server passwords.</p></section><section>
 <h3><a name="Deploy_GitHub_M2_Settings_file."></a>Deploy GitHub M2 Settings file.</h3>
-<p>Each project contains github actions which reference a <a href="../../../.github/maven_settings.xml">M2 Settings file</a>. This file is used so the build system knows where to to look for project dependencies. Copy this file to <code>/home/runner/.m2/settings.xml</code>. Github actions injects usernames and passwords as environment variables. The server section:</p>
+<p>Each project contains github actions which reference a <a href="../../../.github/maven_settings.xml">M2 Settings file</a>. This file is used so the build system knows where to to look for project dependencies. Copy this file to <code>/home/stevecrocker/.m2/settings.xml</code>. Github actions injects usernames and passwords as environment variables. The server section:</p>
 
 <div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;server&gt;
   &lt;id&gt;github&lt;/id&gt;
-  &lt;username&gt;runner&lt;/username&gt;
+  &lt;username&gt;stevecrocker&lt;/username&gt;
   &lt;password&gt;${env.TOKEN}&lt;/password&gt;
 &lt;/server&gt;
 </code></pre></div>
-<p>Needs to be updated with your credentials. All instances of<code>runner</code> should be replaced with your GitHub Username. Next we need to generate a Personal Access Token so it can be encrypted and stored.</p></section><section>
+<p>Needs to be updated with your credentials. All instances of<code>stevecrocker</code> should be replaced with your GitHub Username. Next we need to generate a Personal Access Token so it can be encrypted and stored.</p></section><section>
 <h3><a name="Creating_a_personal_access_token"></a>Creating a personal access token</h3>
 <p>Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.</p>
 <ul>
@@ -161,11 +161,11 @@
 
 <div class="source"><pre class=" prettyprint linenums"><code>{COQLCE6DU6GtcS5P=}
 </code></pre></div>
-<p>Within your M2 Settings file <code>/home/runner/.m2/settings.xml</code> you will find a number of server elements like the following:</p>
+<p>Within your M2 Settings file <code>/home/stevecrocker/.m2/settings.xml</code> you will find a number of server elements like the following:</p>
 
 <div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;server&gt;
   &lt;id&gt;github&lt;/id&gt;
-  &lt;username&gt;runner&lt;/username&gt;
+  &lt;username&gt;stevecrocker&lt;/username&gt;
   &lt;password&gt;${env.TOKEN}&lt;/password&gt;
 &lt;/server&gt;
 </code></pre></div>
@@ -184,9 +184,9 @@
           <div id="socialMediaDiv" class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0">
             <div>Get connected with us on social networks</div>
             <div>
-            <a id="bootstrapSkin.facebook.groupIdLinkContact" https://www.facebook.com/groups/350073883439443 class=" p-1"><i id="bootstrapSkin.facebook.groupIdLinkIcon" class=" bi-facebook text-dark px-1"></i></a>
-            <a id="bootstrapSkin.twitter.accountIdLinkContact" https://twitter.com/PallasUK class=" p-1"><i id="bootstrapSkin.twitter.accountIdLinkIcon" class=" bi-twitter text-dark px-1"></i></a>
-            <a id="bootstrapSkin.gitHub.projectIdLinkContact" https://github.com/${gitHubOrg}/${gitHubRepo} class=" p-1"><i id="bootstrapSkin.gitHub.projectIdLinkIcon" class=" bi-github text-dark px-1"></i></a>
+            <a id="bootstrapSkin.facebook.groupIdLinkContact" https://www.facebook.com/groups/350073883439443 class=" p-1"><i id="bootstrapSkin.facebook.groupIdLinkIcon" class=" bi-facebook text-light px-1"></i></a>
+            <a id="bootstrapSkin.twitter.accountIdLinkContact" https://twitter.com/PallasUK class=" p-1"><i id="bootstrapSkin.twitter.accountIdLinkIcon" class=" bi-twitter text-light px-1"></i></a>
+            <a id="bootstrapSkin.gitHub.projectIdLinkContact" https://github.com/${gitHubOrg}/${gitHubRepo} class=" p-1"><i id="bootstrapSkin.gitHub.projectIdLinkIcon" class=" bi-github text-light px-1"></i></a>
             </div>
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
