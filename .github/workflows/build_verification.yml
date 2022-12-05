@@ -78,9 +78,8 @@ jobs:
         with:
           path: '**/pmd.xml'
 
-      - name: SonarCloud Analysis
-        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
         env:
-          GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
