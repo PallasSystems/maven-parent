@@ -1,8 +1,7 @@
-name: Build Verification of Maven project
-
+name: Updated Dependencies of Maven project
 on:
-schedule:
-  cron:  '30 11 * * *'
+  schedule:
+    cron:  '30 11 * * *'
   workflow_dispatch:
 
 jobs:
