@@ -83,3 +83,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=my-organization
+            -Dsonar.projectKey=my-projectkey
+            -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.sources=lib/
+            -Dsonar.test.exclusions=tests/**
+            -Dsonar.tests=tests/
+            -Dsonar.verbose=true
+
+      - name: SonarCloud Analysis
+        run: mvn --batch-mode --settings .github/maven_settings.xml --file pom.xml verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
