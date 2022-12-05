@@ -75,9 +75,8 @@
 
         <!-- Compiler settings, lets you tweak what JDK you are using as needed. -->
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.release>11</maven.compiler.release>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.failOnError>true</maven.compiler.failOnError>
         <maven.compiler.failOnWarning>false</maven.compiler.failOnWarning>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
@@ -90,7 +89,7 @@
         <!-- Used to publish the maven site. -->
         <scmpublish.scm.branch>gh-pages</scmpublish.scm.branch>
         <scmpublish.pubScmUrl>${project.scm.connection}</scmpublish.pubScmUrl>
-        <scmpublish.content>${project.build.directory}/staging/</scmpublish.content>
+        <scmpublish.content>${project.build.directory}/staging</scmpublish.content>
         <!-- GitHub Changelog Parameters -->
         <displayFileRevDetailUrl>${project.scm.url}/tree/master/%FILE%</displayFileRevDetailUrl>
         <displayChangeSetDetailUrl>${project.scm.url}/commit</displayChangeSetDetailUrl>
