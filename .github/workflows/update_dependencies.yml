@@ -1,7 +1,7 @@
 name: Updated Dependencies of Maven project
 on:
   schedule:
-    cron:  '30 11 * * *'
+    - cron:  '30 11 * * *'
   workflow_dispatch:
 
 jobs:
