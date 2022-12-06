@@ -92,6 +92,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: Setup Git Email
+        run: git config --global user.email "pallas-ci@pallas.uk"
+      - name: Setup Git User
+        run: git config --global user.name "GitHub Action"
+      - name: Setup GPG Autosign
+        run: git config --global commit.gpgsign false
+      - name: Setup GPG Autosign Key
+        run: git config --global user.signingkey ${{ secrets.GPG_PRIVATE_KEYNAME }}
+
       - name: Checkin
         run: mvn --batch-mode --settings .github/maven_settings.xml org.apache.maven.plugins:maven-scm-plugin:1.11.2:checkin -Dmessage="Updated Properties"
         env:
