@@ -93,9 +93,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Setup Git Email
-        run: git config --global user.email "pallas-ci@pallas.uk"
+        run: git config --global user.email "continuous.integration@pallas.uk"
       - name: Setup Git User
-        run: git config --global user.name "GitHub Action"
+        run: git config --global user.name "pallasCI"
       - name: Setup GPG Autosign
         run: git config --global commit.gpgsign false
       - name: Setup GPG Autosign Key
