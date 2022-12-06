@@ -102,7 +102,7 @@ jobs:
         run: git config --global user.signingkey ${{ secrets.GPG_PRIVATE_KEYNAME }}
 
       - name: Checkin
-        run: mvn --batch-mode --settings .github/maven_settings.xml org.apache.maven.plugins:maven-scm-plugin:1.11.2:checkin -Dmessage="Updated Properties"
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.apache.maven.plugins:maven-scm-plugin:1.11.2:checkin -Dmessage="Updated Properties" -DprivateKey=${{ secrets.GPG_PRIVATE_KEY }} -Dpassphrase=${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
