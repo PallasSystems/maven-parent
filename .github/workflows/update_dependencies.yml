@@ -55,6 +55,18 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
+      - name: Configure GPG key settings
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          git_config_global: true
+          git_user_signingkey: true
+          git_committer_name: "pallasCI"
+          git_committer_email: "continuous.integration@pallas.uk"
+          git_commit_gpgsign: true
+          git_push_gpgsign: true
+
       - name: Update Parent
         run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-parent ${{ secrets.MAVEN_VERSION_OPTS }}
         env:
@@ -92,19 +104,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Setup Git Email
-        run: git config --global user.email "continuous.integration@pallas.uk"
-      - name: Setup Git User
-        run: git config --global user.name "pallasCI"
-      - name: Setup GPG Autosign
-        run: git config --global commit.gpgsign false
-      - name: Setup GPG Autosign Key
-        run: git config --global user.signingkey ${{ secrets.GPG_PRIVATE_KEYNAME }}
-
       - name: Checkin
-        run: mvn --batch-mode --settings .github/maven_settings.xml org.apache.maven.plugins:maven-scm-plugin:1.11.2:checkin -Dmessage="Updated Properties" -DprivateKey=${{ secrets.GPG_PRIVATE_KEY }} -Dpassphrase=${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.apache.maven.plugins:maven-scm-plugin:1.11.2:checkin -Dmessage="Updated Properties"
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
