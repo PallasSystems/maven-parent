@@ -65,7 +65,7 @@ jobs:
           git_committer_name: "pallasCI"
           git_committer_email: "continuous.integration@pallas.uk"
           git_commit_gpgsign: true
-          git_push_gpgsign: true
+          git_push_gpgsign: false
 
       - name: Update Parent
         run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-parent ${{ secrets.MAVEN_VERSION_OPTS }}
