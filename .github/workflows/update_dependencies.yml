@@ -4,26 +4,56 @@ on:
     - cron:  '30 11 * * *'
   workflow_dispatch:
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ 8, 11, 17 ]
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up JDK 11
+      - name: Check out Source Code
+        uses: actions/checkout@v2.5.0
+
+      - name: Set up JDK ${{ matrix.version }}
         uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
-          java-version: 11
+          cache: 'maven'
+          distribution: 'temurin'
+          java-version: ${{ matrix.version }}
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
-      - name: Cache Maven packages
-        uses: actions/cache@v3.0.11
+      - name: Update Parent
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-parent ${{ secrets.MAVEN_VERSION_OPTS }}
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+
+      - name: Update Properties
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-properties ${{ secrets.MAVEN_VERSION_OPTS }}
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+
+      - name: Build with Maven
+        run: mvn --batch-mode --settings .github/maven_settings.xml clean install -DskipTests=true
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+
+  update_versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Source Code
+        uses: actions/checkout@v2.5.0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          cache: 'maven'
+          distribution: 'temurin'
+          java-version: 17
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Update Parent
         run: mvn --batch-mode --settings .github/maven_settings.xml org.codehaus.mojo:versions-maven-plugin:update-parent ${{ secrets.MAVEN_VERSION_OPTS }}
@@ -38,13 +68,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
 
       - name: Jacoco Coverage
-        run: mvn --batch-mode --settings .github/maven_settings.xml org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.8:report
-        env:
-          GITHUB_USER: ${{ secrets.SCM_USER }}
-          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-
-      - name: Build with Maven
-        run: mvn --batch-mode --settings .github/maven_settings.xml clean install -DskipTests=true
+        run: mvn --batch-mode --settings .github/maven_settings.xml org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.8:report install
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
