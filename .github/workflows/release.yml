@@ -6,7 +6,7 @@ on:
       - release/*
   workflow_dispatch:
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Source Code
@@ -69,6 +69,6 @@ jobs:
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: git merge origin/release/${{ env.BRANCH_NAME }}
 
-      - name: Merge release banch into main
+      - name: Push from local into remote
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: git push origin main
