@@ -72,3 +72,9 @@ jobs:
       - name: Push from local into remote
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: git push origin main
+
+      - name: Upload Release Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: "v${{ env.BRANCH_NAME }}"
+          path: "**/target/*${{ env.BRANCH_NAME }}*"
