@@ -25,10 +25,12 @@ jobs:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
           git_user_signingkey: true
+          git_config_global: true
           git_committer_name: "pallasCI"
           git_committer_email: "continuous.integration@pallas.uk"
           git_commit_gpgsign: true
           git_push_gpgsign: false
+          git_tag_gpgsign: true
 
       - name: Extract branch name
         id: extract_branch
