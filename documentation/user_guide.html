@@ -106,13 +106,14 @@
 <h2>site.xml configuration</h2>
 <p>You will need to define a <code>site.xml</code> file and define</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/DECORATION/1.8.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/DECORATION/1.8.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd&quot;&gt;
     &lt;edit&gt;https://github.com/PallasSystems/maven-parent&lt;/edit&gt;
     &lt;skin&gt;
         &lt;groupId&gt;uk.pallas&lt;/groupId&gt;
         &lt;artifactId&gt;maven-pallas-skin&lt;/artifactId&gt;
-        &lt;version&gt;0.1.6&lt;/version&gt;
+        &lt;version&gt;0.2.0&lt;/version&gt;
     &lt;/skin&gt;
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -132,7 +133,8 @@
 <h3>TopBar and/or sideBar</h3>
 <p>The skin supports different layouts, enabling/disabling the left sidebar menu and the topbar menu.  Users have just play with flags in the <code>custom.pallasSkin</code> element in <code>site.xml</code>:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     &lt;custom&gt;
         &lt;pallasSkin&gt;
             &lt;topBarEnabled&gt;true&lt;/topBarEnabled&gt;
@@ -153,7 +155,8 @@
 <p>When users decide to enable the topbar, they can plug a small icon/logo there (typically 108*20 px) just configuring
 the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -172,7 +175,8 @@ the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:<
 <h3>TopBarContainerStyle</h3>
 <p>You can configure the style attribute value of the div container for your topbar</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -187,7 +191,8 @@ the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:<
 <p>You can configure style of your top bar nav (since bootstrap 2.1.0 is not anymore black by default).
 Use navbar-inverse to have the black one.</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -202,7 +207,8 @@ Use navbar-inverse to have the black one.</p>
 <p>Source code sections are enhanced by {{{<a href="https://github.com/google/code-prettify" class="externalLink">https://github.com/google/code-prettify</a>}Google Code Prettify}}, users can
 optionally enable line numbers rendering (disabled by default):</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -221,7 +227,8 @@ optionally enable line numbers rendering (disabled by default):</p>
 <li><code>custom.pallasSkin.gitHub.ribbonColor</code>: optional, it is the the ribbon color, <code>red</code>/<code>green</code>/<code>black</code>/&#xab;darkblue&#xbb;/<code>orange</code>/<code>gray</code> only accepted only accepted (<code>red</code> by default).</li>
 </ul>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -248,7 +255,8 @@ different status/stages:</p>
 <p>Users can configure different backgrounds depending on the project status (except the production) to warrant users they
 are not using a production ready software:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -262,13 +270,15 @@ are not using a production ready software:</p>
 <p>The maven site plugin currently expect documentation to sit in specific paths <a href="https://maven.apache.org/plugins/maven-site-plugin/examples/creating-content.html" class="externalLink">as documented on the maven-site-plugin website</a>.</p>
 <p>This creates a problem as the maven-site-plugin converts the documentation path as part of constructing the Maven site. So for example if you have a document on the following path <code>src/site/markdown/example.md</code> it might reference an image found under <code>src/site/resources/images/diagram.png</code>. For this to be navigatable through markdown viewers built into code repositories you would construct your image reference like so</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code>this is some example text
+<div class="verbatim">
+<pre><code>this is some example text
 ![Diagram](../resources/images/diagram.png)
 here is the image caption
 </code></pre></div>
 <p>The problem is in the resulting Maven site the directory will look like the following:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code>+- target/
+<div class="verbatim">
+<pre><code>+- target/
    +- site/
       +- example.html
       +- images/
@@ -276,11 +286,13 @@ here is the image caption
 </code></pre></div>
 <p>The maven-site-plugin will retrain the reference and so example.html will have an image tag like the following:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-html">&lt;img alt=&quot;Diagram&quot; src=&quot;../resources/images/diagram.png&quot; /&gt;
+<div class="verbatim">
+<pre><code class="language-html">&lt;img alt=&quot;Diagram&quot; src=&quot;../resources/images/diagram.png&quot; /&gt;
 </code></pre></div>
 <p>We need to hide the folder structure quirk found in the Apache Maven plugin, we can do this by configuring the maven-resources-plugin to scan a directory for specific supported document types and copy it into an interim</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
@@ -405,7 +417,7 @@ here is the image caption
             </div>
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
-      2022
+      2022&#x2013;2023
 <a href="https://www.pallas.uk">Pallas Systems</a>
               </p>
             </div>

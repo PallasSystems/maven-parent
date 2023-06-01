@@ -113,15 +113,18 @@
 <h3>How to create a master password</h3>
 <p>Use the following command line:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-bash">mvn --encrypt-master-password
+<div class="verbatim">
+<pre><code class="language-bash">mvn --encrypt-master-password
 </code></pre></div>
 <p>Maven should request your &#x2018;master&#x2019; password, this can be anything unique and is used as a salt to encrypt your other passwords. This command will produce an encrypted version of the password, something like</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-bash">{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
+<div class="verbatim">
+<pre><code class="language-bash">{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
 </code></pre></div>
 <p>Store this password in the <code>/home/runner/.m2/settings-security.xml</code> it should look like</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;settingsSecurity&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;settingsSecurity&gt;
   &lt;master&gt;{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}&lt;/master&gt;
 &lt;/settingsSecurity&gt;
 </code></pre></div>
@@ -129,7 +132,8 @@
 <h3>Deploy GitHub M2 Settings file.</h3>
 <p>Each project contains github actions which reference a <a href="../../../.github/maven_settings.xml">M2 Settings file</a>. This file is used so the build system knows where to to look for project dependencies. Copy this file to <code>/home/runner/.m2/settings.xml</code>. Github actions injects usernames and passwords as environment variables. The server section:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;server&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;server&gt;
   &lt;id&gt;github&lt;/id&gt;
   &lt;username&gt;runner&lt;/username&gt;
   &lt;password&gt;${env.TOKEN}&lt;/password&gt;
@@ -155,15 +159,18 @@
 <h3>How to encrypt server passwords</h3>
 <p>Now we have a personal access token we can use as a password we need to encrypt it to use on the device. This is achieved using the following command:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-bash">mvn --encrypt-password
+<div class="verbatim">
+<pre><code class="language-bash">mvn --encrypt-password
 </code></pre></div>
 <p>A dialog will appear asking for the password, please use the personal access token value. This command produces an encrypted version of it, something like</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code>{COQLCE6DU6GtcS5P=}
+<div class="verbatim">
+<pre><code>{COQLCE6DU6GtcS5P=}
 </code></pre></div>
 <p>Within your M2 Settings file <code>/home/runner/.m2/settings.xml</code> you will find a number of server elements like the following:</p>
 
-<div class="source"><pre class=" prettyprint linenums"><code class="language-xml">&lt;server&gt;
+<div class="verbatim">
+<pre><code class="language-xml">&lt;server&gt;
   &lt;id&gt;github&lt;/id&gt;
   &lt;username&gt;runner&lt;/username&gt;
   &lt;password&gt;${env.TOKEN}&lt;/password&gt;
@@ -190,7 +197,7 @@
             </div>
             <div id="copyrightDiv" class="pt-3">
               <p>&#169;
-      2022
+      2022&#x2013;2023
 <a href="https://www.pallas.uk">Pallas Systems</a>
               </p>
             </div>
