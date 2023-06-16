@@ -4,7 +4,7 @@
 
     <groupId>uk.pallas.systems</groupId>
     <artifactId>parent</artifactId>
-    <version>0.1.7-SNAPSHOT  </version>
+    <version>0.2.1-SNAPSHOT  </version>
     <name>Pallas Systems</name>
     <packaging>pom</packaging>
     <description>SUPER POM to simplify development of Maven based projects for Freeman.</description>
