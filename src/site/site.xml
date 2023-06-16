@@ -7,8 +7,11 @@
     <skin>
         <groupId>io.github.stevecrox.maven.skins</groupId>
         <artifactId>bootstrap-site-skin</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.16</version>
     </skin>
+
+    <version position="none" />
+    <publishDate position="none" />
 
     <custom>
         <bootstrapSkin>
@@ -20,10 +23,10 @@
                 <groupId>350073883439443</groupId>
             </facebook>
             <footer>
-                <style>page-footer font-small pt-4 bg-dark text-light</style>
+                <style>footer d-flex align-items-end mt-auto py-4 bg-dark text-light</style>
             </footer>
             <gitHub>
-                <projectId>PallasUK/freeman-parent</projectId>
+                <projectId>PallasUK/maven-parent</projectId>
             </gitHub>
             <navbar>
                 <enabled>true</enabled>
@@ -35,8 +38,6 @@
             </navbar>
             <projectbar>
                 <skipBreadcrumb>true</skipBreadcrumb>
-                <skipGenerationDate>true</skipGenerationDate>
-                <skipGenerationVersion>true</skipGenerationVersion>
             </projectbar>
             <twitter>
                 <accountId>PallasUK</accountId>
