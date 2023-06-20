@@ -67,7 +67,7 @@
     <properties>
         <!-- Name of the projects to use as part of the site description. -->
         <github_repository_name>maven-parent</github_repository_name>
-        <github_organisation>PallasSystems</github_organisation>
+        <github_organisation>pallassystems</github_organisation>
 
         <!-- Project documentation. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -119,13 +119,16 @@
         <maven-scm-publish-plugin.version>3.2.1</maven-scm-publish-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
-        <maven-javadoc-plugin.version>3.4.0</maven-javadoc-plugin.version>
         <maven-jxr-plugin.version>3.3.0</maven-jxr-plugin.version>
         <maven-surefire-report-plugin.version>3.0.0</maven-surefire-report-plugin.version>
         <taglist-maven-plugin.version>3.0.0</taglist-maven-plugin.version>
         <maven-pmd-plugin.version>3.20.0</maven-pmd-plugin.version>
         <maven-checkstyle-plugin.version>3.3.0</maven-checkstyle-plugin.version>
         <sonar-maven-plugin.version>5.1</sonar-maven-plugin.version>
+
+        <!-- Javadoc specific configuration. -->
+        <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 
         <!-- Spotbugs specific configuration. -->
         <spotbugs-maven-plugin.version>4.7.3.4</spotbugs-maven-plugin.version>
