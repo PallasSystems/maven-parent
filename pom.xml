@@ -4,7 +4,7 @@
 
     <groupId>uk.pallas.systems</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <name>Maven Parent</name>
     <packaging>pom</packaging>
     <description>SUPER POM to simplify development of Maven based projects for Freeman.</description>
@@ -41,7 +41,7 @@
         <connection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</connection>
         <developerConnection>scm:git:https://github.com/${github_organisation}/${github_repository_name}.git</developerConnection>
         <url>https://github.com/${github_organisation}/${github_repository_name}</url>
-        <tag>v0.0.1</tag>
+        <tag>v1.0.2</tag>
     </scm>
 
     <issueManagement>
