@@ -7,7 +7,7 @@
     <skin>
         <groupId>io.github.stevecrox.maven.skins</groupId>
         <artifactId>bootstrap-site-skin</artifactId>
-        <version>1.0.16</version>
+        <version>1.3.4</version>
     </skin>
 
     <version position="none" />
@@ -17,27 +17,30 @@
         <bootstrapSkin>
             <contact>
                 <email>info@pallas.uk</email>
-                <mobile>+44 7861 530488</mobile>
             </contact>
             <facebook>
                 <groupId>350073883439443</groupId>
             </facebook>
-            <footer>
-                <style>footer d-flex align-items-end mt-auto py-4 bg-dark text-light</style>
-            </footer>
+            <linkedin>
+                <accountId>pallas-systems-ltd</accountId>
+            </linkedin>
             <gitHub>
-                <projectId>PallasUK/maven-parent</projectId>
+                <organisation>PallasSystems</organisation>
+                <repository>maven-site-resources</repository>
             </gitHub>
             <navbar>
                 <enabled>true</enabled>
                 <icon>
-                    <alt>SUPER POM to simplify development of Maven based projects for Freeman.</alt>
+                    <alt>Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems.</alt>
                     <href>./index.html</href>
                     <src>./images/pallas-image.png</src>
+                    <width>68px</width>
+                    <height>52px</height>
                 </icon>
             </navbar>
             <projectbar>
                 <skipBreadcrumb>true</skipBreadcrumb>
+                <style>navbar_suffix_menu border-top navbar-dark bg-dark container-fluid</style>
             </projectbar>
             <twitter>
                 <accountId>PallasUK</accountId>
@@ -46,26 +49,11 @@
     </custom>
 
     <body>
-        <menu ref="parent"/>
-
-        <menu name="Overview">
-            <item name="Welcome" href="overview/welcome.html" />
-            <item name="Getting Started" href="overview/getting_started.html" />
-            <item name="FAQ" href="overview/faq.html" />
-        </menu>
-        <menu name="Documentation">
-            <item name="User Guide" href="documentation/user_guide.html" />
-            <item name="Developer Guide">
-                <item name="Building Software Project" href="documentation/developer_guides/developer_guide.html" />
-            </item>
-        </menu>
-
-        <menu name="Developers">
-            <item name="Building" href="developers/technical/building_project.html" />
-            <item name="Release" href="developers/technical/release_project.html" />
-            <item name="Development Process" href="developers/technical/development_workflow.html" />
-            <item name="Release Management" href="developers/technical/release_project.html" />
-        </menu>
+        <links>
+            <item name="Overview" href="./overview/getting_started.html"/>
+            <item name="Developer Guide" href="./documentation/developer_guides/developer_guide.html"/>
+            <item name="FAQ" href="./overview/faq.html"/>
+        </links>
 
         <menu ref="modules" />
         <menu ref="reports" />
