@@ -85,7 +85,7 @@
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
         <project.docs.directory>docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
-        <uk.pallas.systems.site.version>0.0.5</uk.pallas.systems.site.version>
+        <uk.pallas.systems.site.version>0.5.5</uk.pallas.systems.site.version>
         <!-- Used to publish the maven site. -->
         <scmpublish.scm.branch>gh-pages</scmpublish.scm.branch>
         <scmpublish.pubScmUrl>${project.scm.connection}</scmpublish.pubScmUrl>
