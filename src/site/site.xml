@@ -50,9 +50,9 @@
 
     <body>
         <links>
-            <item name="Overview" href="maven-parent/overview/getting_started.html"/>
-            <item name="Developer Guide" href="maven-parent/documentation/developer_guides/developer_guide.html"/>
-            <item name="FAQ" href="maven-parent/overview/faq.html"/>
+            <item name="Overview" href="overview/getting_started.html"/>
+            <item name="Developer Guide" href="documentation/developer_guides/developer_guide.html"/>
+            <item name="FAQ" href="overview/faq.html"/>
         </links>
 
         <menu ref="modules" />
