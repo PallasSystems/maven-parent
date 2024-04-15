@@ -7,7 +7,7 @@
     <skin>
         <groupId>io.github.stevecrox.maven.skins</groupId>
         <artifactId>bootstrap-site-skin</artifactId>
-        <version>1.3.4</version>
+        <version>1.4.3</version>
     </skin>
 
     <version position="none" />
@@ -50,9 +50,9 @@
 
     <body>
         <links>
-            <item name="Overview" href="${relativePath}/overview/getting_started.html"/>
-            <item name="Developer Guide" href="${relativePath}/documentation/developer_guides/developer_guide.html"/>
-            <item name="FAQ" href="${relativePath}/overview/faq.html"/>
+            <item name="Overview" href="./overview/getting_started.html"/>
+            <item name="Developer Guide" href="./documentation/developer_guides/developer_guide.html"/>
+            <item name="FAQ" href="./overview/faq.html"/>
         </links>
 
         <menu ref="modules" />
