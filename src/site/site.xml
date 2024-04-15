@@ -26,7 +26,7 @@
             </linkedin>
             <gitHub>
                 <organisation>PallasSystems</organisation>
-                <repository>maven-site-resources</repository>
+                <repository>maven-parent</repository>
             </gitHub>
             <navbar>
                 <enabled>true</enabled>
