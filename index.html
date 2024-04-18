@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Maven Parent – Maven-Parent</title>
+    <title>Maven Parent</title>
 
         <link rel="icon" href="./img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -48,7 +48,7 @@
       
     
                       <a href="./index.html" id="NavBrandBar.BrandLink"
-              title="Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems."
+              title="Super POM to be used on all Pallas Systems projects."
             
               class="text-light active navbar-brand"
           >
@@ -59,7 +59,7 @@
         
         
         
-      <img id="NavBrandBar.Brand.Img" src="./images/pallas-image.png"  alt="Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems."  title="Navbar Brand Icon" width="68px" height="52px" 
+      <img id="NavBrandBar.Brand.Img" src="./images/pallas-image.png"  alt="Super POM to be used on all Pallas Systems projects."  title="Navbar Brand Icon" width="68px" height="52px" 
               />
   
                   Maven Parent
@@ -87,20 +87,21 @@
             <li class="nav-item">
               
         
-        <a class="navbar_collapse_menu nav-link" href="overview/getting_started.html" id="Link.Dropdown.Overview" role="button" aria-expanded="false">Overview</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_collapse_menu nav-link" href="documentation/developer_guides/developer_guide.html" id="Link.Dropdown.Developer Guide" role="button" aria-expanded="false">Developer Guide</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_collapse_menu nav-link" href="overview/faq.html" id="Link.Dropdown.FAQ" role="button" aria-expanded="false">FAQ</a>
+        <a class="navbar_collapse_menu nav-link" href="gettingStarted/gett.html" id="Link.Dropdown.Getting Started" role="button" aria-expanded="false">Getting Started</a>
             </li>
                         
             <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Developer Guides" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer Guides <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Developer Guides">
+                                    <li class="nav-item dropdown-item" id="BuildDropdown">
+                                                <a href="documentation/developer_guides/developer_guide.html" id="BuildDropdownLink" title="Build"  class="dropdown-item" >Build</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="DocumentationDropdown">
+                                                <a href="documentation/developer_guides/documentation_guide.md" id="DocumentationDropdownLink" title="Documentation"  class="dropdown-item" >Documentation</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="ReleaseDropdown">
+                                                <a href="developers/technical/release_project.html" id="ReleaseDropdownLink" title="Release"  class="dropdown-item" >Release</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
         <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Project Documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Project Documentation">
                                     <li class="nav-item dropdown-item dropdown-submenu">
@@ -158,20 +159,21 @@
             <li class="nav-item">
               
         
-        <a class="navbar_suffix_menu nav-link" href="overview/getting_started.html" id="Link.Dropdown.Overview" role="button" aria-expanded="false">Overview</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_suffix_menu nav-link" href="documentation/developer_guides/developer_guide.html" id="Link.Dropdown.Developer Guide" role="button" aria-expanded="false">Developer Guide</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_suffix_menu nav-link" href="overview/faq.html" id="Link.Dropdown.FAQ" role="button" aria-expanded="false">FAQ</a>
+        <a class="navbar_suffix_menu nav-link" href="gettingStarted/gett.html" id="Link.Dropdown.Getting Started" role="button" aria-expanded="false">Getting Started</a>
             </li>
                             
             <li class="nav-item dropdown">
+        <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Developer Guides" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer Guides <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Developer Guides">
+                                    <li class="nav-item dropdown-item" id="BuildDropdown">
+                                                <a href="documentation/developer_guides/developer_guide.html" id="BuildDropdownLink" title="Build"  class="dropdown-item" >Build</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="DocumentationDropdown">
+                                                <a href="documentation/developer_guides/documentation_guide.md" id="DocumentationDropdownLink" title="Documentation"  class="dropdown-item" >Documentation</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="ReleaseDropdown">
+                                                <a href="developers/technical/release_project.html" id="ReleaseDropdownLink" title="Release"  class="dropdown-item" >Release</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
         <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Project Documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Project Documentation">
                                     <li class="nav-item dropdown-item dropdown-submenu">
@@ -235,17 +237,59 @@
         <div class="container mt-3 rounded">
                   
     
+    <div id="intro" class="my-3 text-center container">
+  
+<div class="my-2 row">
     <section>
-<h1>Maven-Parent</h1>
-<p>This is a Super POM, all Maven/Gradle projects developed by Pallas Systems should use this POM as a parent. It will configure them to use the same code analysis standard as well as ensuring we produce a consist set of artifacts.</p><section>
-<h2>Contributing</h2>
-<p>We welcome questions, ideas, issues and code contributions to this project.</p>
-<p>Use the <a href="https://github.com/PallasSystems/typr/issues" class="externalLink">issues page</a> to get in touch with the community.</p>
-<p>If you would like to make a code contribution please fork the repository and create a
-<a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests" class="externalLink">GitHub pull request</a> to the <code>main</code> branch.</p></section><section>
-<h2>License</h2>
-<p><img src="https://img.shields.io/github/license/apache/maven.svg?label=License" alt="Apache License, Version 2.0, January 2004" /></p>
-<p>See the included LICENSE file for details.</p></section></section>
+<h1>Pallas Maven Super POM</h1>
+  </div>
+  
+<div class="my-2 row">
+    <section><section><section><section>
+<h5> 
+      This is a Super POM, all Maven/Gradle projects developed by Pallas Systems should use this POM as a parent. It will configure them to use the same code analysis standard as well as ensuring we produce a consist set of artifacts.
+    </h5>
+  </div>
+  
+<div class="row">
+    
+<div class="col">
+      
+<div class="d-grid gap-2 my-2">
+        <a href="./gettingStarted/index.html" style="min-height: 4em;" class="btn btn-dark">
+          
+<p class="home_muti_line_btn">Getting Started</p>
+        </a>
+      </div>
+    </div>
+    
+<div class="col">
+      
+<div class="d-grid gap-2 my-2">
+        <a href="./documentation/developer_guides/index.md" style="min-height: 4em;" class="btn btn-dark">
+          
+<p class="home_btn">Developer Guides</p>
+        </a>
+      </div>
+    </div>
+    
+<div class="col">
+      
+<div class="d-grid gap-2 my-2">
+        <a href="./project-info" style="min-height: 4em;" class="btn btn-dark">
+          
+<p class="home_btn">Project Information</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+<div class="my-2 row">
+    
+<p>Current Version: 0.3.3</p>
+  </div>
+</div>
+</section></section></section></section></section>
       </div>
     </main>
 

@@ -48,7 +48,7 @@
       
     
                       <a href=".././index.html" id="NavBrandBar.BrandLink"
-              title="Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems."
+              title="Super POM to be used on all Pallas Systems projects."
             
               class="text-light active navbar-brand"
           >
@@ -59,7 +59,7 @@
         
         
         
-      <img id="NavBrandBar.Brand.Img" src=".././images/pallas-image.png"  alt="Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems."  title="Navbar Brand Icon" width="68px" height="52px" 
+      <img id="NavBrandBar.Brand.Img" src=".././images/pallas-image.png"  alt="Super POM to be used on all Pallas Systems projects."  title="Navbar Brand Icon" width="68px" height="52px" 
               />
   
                   Maven Parent
@@ -87,20 +87,21 @@
             <li class="nav-item">
               
         
-        <a class="navbar_collapse_menu nav-link" href="../overview/getting_started.html" id="Link.Dropdown.Overview" role="button" aria-expanded="false">Overview</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_collapse_menu nav-link" href="../documentation/developer_guides/developer_guide.html" id="Link.Dropdown.Developer Guide" role="button" aria-expanded="false">Developer Guide</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_collapse_menu nav-link" href="../overview/faq.html" id="Link.Dropdown.FAQ" role="button" aria-expanded="false">FAQ</a>
+        <a class="navbar_collapse_menu nav-link" href="../gettingStarted/gett.html" id="Link.Dropdown.Getting Started" role="button" aria-expanded="false">Getting Started</a>
             </li>
                         
             <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Developer Guides" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer Guides <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Developer Guides">
+                                    <li class="nav-item dropdown-item" id="BuildDropdown">
+                                                <a href="../documentation/developer_guides/developer_guide.html" id="BuildDropdownLink" title="Build"  class="dropdown-item" >Build</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="DocumentationDropdown">
+                                                <a href="../documentation/developer_guides/documentation_guide.md" id="DocumentationDropdownLink" title="Documentation"  class="dropdown-item" >Documentation</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="ReleaseDropdown">
+                                                <a href="../developers/technical/release_project.html" id="ReleaseDropdownLink" title="Release"  class="dropdown-item" >Release</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
         <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Project Documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Project Documentation">
                                     <li class="nav-item dropdown-item dropdown-submenu">
@@ -158,20 +159,21 @@
             <li class="nav-item">
               
         
-        <a class="navbar_suffix_menu nav-link" href="../overview/getting_started.html" id="Link.Dropdown.Overview" role="button" aria-expanded="false">Overview</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_suffix_menu nav-link" href="../documentation/developer_guides/developer_guide.html" id="Link.Dropdown.Developer Guide" role="button" aria-expanded="false">Developer Guide</a>
-            </li>
-                <li class="nav-item">
-              
-        
-        <a class="navbar_suffix_menu nav-link" href="../overview/faq.html" id="Link.Dropdown.FAQ" role="button" aria-expanded="false">FAQ</a>
+        <a class="navbar_suffix_menu nav-link" href="../gettingStarted/gett.html" id="Link.Dropdown.Getting Started" role="button" aria-expanded="false">Getting Started</a>
             </li>
                             
             <li class="nav-item dropdown">
+        <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Developer Guides" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer Guides <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Developer Guides">
+                                    <li class="nav-item dropdown-item" id="BuildDropdown">
+                                                <a href="../documentation/developer_guides/developer_guide.html" id="BuildDropdownLink" title="Build"  class="dropdown-item" >Build</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="DocumentationDropdown">
+                                                <a href="../documentation/developer_guides/documentation_guide.md" id="DocumentationDropdownLink" title="Documentation"  class="dropdown-item" >Documentation</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="ReleaseDropdown">
+                                                <a href="../developers/technical/release_project.html" id="ReleaseDropdownLink" title="Release"  class="dropdown-item" >Release</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
         <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Project Documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
         <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Project Documentation">
                                     <li class="nav-item dropdown-item dropdown-submenu">
@@ -244,11 +246,11 @@
 <div class="verbatim">
 <pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/DECORATION/1.8.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd&quot;&gt;
-    &lt;edit&gt;https://github.com/pallassystems/maven-parent&lt;/edit&gt;
+    &lt;edit&gt;${project.scm.url}&lt;/edit&gt;
     &lt;skin&gt;
         &lt;groupId&gt;uk.pallas&lt;/groupId&gt;
         &lt;artifactId&gt;maven-pallas-skin&lt;/artifactId&gt;
-        &lt;version&gt;0.3.2&lt;/version&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
     &lt;/skin&gt;
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -434,8 +436,8 @@ here is the image caption
    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;   
     
    &lt;properties&gt;
-      &lt;project.docs.directory&gt;/home/runner/work/maven-parent/maven-parent/target/checkout/docs&lt;/project.docs.directory&gt;
-      &lt;project.build.interim.site.directory&gt;/home/runner/work/maven-parent/maven-parent/target/checkout/target/docs-site&lt;/project.build.interim.site.directory&gt;
+      &lt;project.docs.directory&gt;${project.basedir}/docs&lt;/project.docs.directory&gt;
+      &lt;project.build.interim.site.directory&gt;${project.build.directory}/docs-site&lt;/project.build.interim.site.directory&gt;
       &lt;maven-resources-plugin-version&gt;3.2.0&lt;/maven-resources-plugin-version&gt;
       &lt;maven-site-plugin-version&gt;4.0.0-M1&lt;/maven-site-plugin-version&gt;
    &lt;/properties&gt;
@@ -448,7 +450,7 @@ here is the image caption
                     &lt;artifactId&gt;maven-site-plugin&lt;/artifactId&gt;
                     &lt;version&gt;${maven-site-plugin-version}&lt;/version&gt;
                     &lt;configuration&gt;
-                        &lt;siteDirectory&gt;/home/runner/work/maven-parent/maven-parent/target/checkout/target/docs-site&lt;/siteDirectory&gt;
+                        &lt;siteDirectory&gt;${project.build.interim.site.directory}&lt;/siteDirectory&gt;
                     &lt;/configuration&gt;
                 &lt;/plugin&gt;
                 &lt;plugin&gt;
@@ -472,14 +474,14 @@ here is the image caption
                         &lt;configuration&gt;
                             &lt;resources&gt;
                                 &lt;resource&gt;
-                                    &lt;directory&gt;docs/&lt;/directory&gt;
+                                    &lt;directory&gt;${project.docs.directory}/&lt;/directory&gt;
                                     &lt;includes&gt;
                                       &lt;include&gt;**/*.md&lt;/include&gt;
                                     &lt;/includes&gt;
                                     &lt;filtering&gt;true&lt;/filtering&gt;
                                 &lt;/resource&gt;
                             &lt;/resources&gt;
-                            &lt;outputDirectory&gt;/home/runner/work/maven-parent/maven-parent/target/checkout/target/docs-site/markdown/&lt;/outputDirectory&gt;
+                            &lt;outputDirectory&gt;${project.build.interim.site.directory}/markdown/&lt;/outputDirectory&gt;
                         &lt;/configuration&gt;
                     &lt;/execution&gt;
                     &lt;execution&gt;
@@ -491,7 +493,7 @@ here is the image caption
                         &lt;configuration&gt;
                             &lt;resources&gt;
                                 &lt;resource&gt;
-                                    &lt;directory&gt;docs/&lt;/directory&gt;
+                                    &lt;directory&gt;${project.docs.directory}/&lt;/directory&gt;
                                     &lt;excludes&gt;
                                         &lt;exclude&gt;**/*.md&lt;/exclude&gt;
                                         &lt;exclude&gt;site.xml&lt;/exclude&gt;
@@ -499,7 +501,7 @@ here is the image caption
                                     &lt;filtering&gt;false&lt;/filtering&gt;
                                 &lt;/resource&gt;
                             &lt;/resources&gt;
-                            &lt;outputDirectory&gt;/home/runner/work/maven-parent/maven-parent/target/checkout/target/docs-site/resources/&lt;/outputDirectory&gt;
+                            &lt;outputDirectory&gt;${project.build.interim.site.directory}/resources/&lt;/outputDirectory&gt;
                         &lt;/configuration&gt;
                     &lt;/execution&gt;
                     &lt;execution&gt;
@@ -511,14 +513,14 @@ here is the image caption
                         &lt;configuration&gt;
                             &lt;resources&gt;
                                 &lt;resource&gt;
-                                    &lt;directory&gt;docs/&lt;/directory&gt;
+                                    &lt;directory&gt;${project.docs.directory}/&lt;/directory&gt;
                                     &lt;includes&gt;
                                         &lt;include&gt;site.xml&lt;/include&gt;
                                     &lt;/includes&gt;
                                     &lt;filtering&gt;false&lt;/filtering&gt;
                                 &lt;/resource&gt;
                             &lt;/resources&gt;
-                            &lt;outputDirectory&gt;/home/runner/work/maven-parent/maven-parent/target/checkout/target/docs-site/&lt;/outputDirectory&gt;
+                            &lt;outputDirectory&gt;${project.build.interim.site.directory}/&lt;/outputDirectory&gt;
                         &lt;/configuration&gt;
                     &lt;/execution&gt;
                 &lt;/executions&gt;
