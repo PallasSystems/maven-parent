@@ -85,7 +85,8 @@
         <!-- Used to get the Site files into the right structure, while also being readable in an SCM. -->
         <project.docs.directory>docs</project.docs.directory>
         <project.build.interim.site.directory>${project.build.directory}/docs-site</project.build.interim.site.directory>
-        <uk.pallas.systems.site.version>0.5.5</uk.pallas.systems.site.version>
+        <uk.pallas.systems.site.resources.version>0.5.9</uk.pallas.systems.site.resources.version>
+        <uk.pallas.systems.site.checkstyle.version>0.0.4</uk.pallas.systems.site.checkstyle.version>
         <!-- Used to publish the maven site. -->
         <scmpublish.scm.branch>gh-pages</scmpublish.scm.branch>
         <scmpublish.pubScmUrl>${project.scm.connection}</scmpublish.pubScmUrl>
@@ -382,7 +383,7 @@
                         <dependency>
                             <groupId>uk.pallas.systems.site</groupId>
                             <artifactId>checkstyle</artifactId>
-                            <version>0.0.1</version>
+                            <version>${uk.pallas.systems.site.checkstyle.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -495,91 +496,11 @@
             <id>docs-documentation</id>
             <activation>
                 <file>
-                    <exists>docs</exists>
+                    <exists>src/site</exists>
                 </file>
             </activation>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>copy-markdown-into-target</id>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <phase>validate</phase>
-                                <configuration>
-                                    <resources>
-                                        <resource>
-                                            <directory>${project.docs.directory}/</directory>
-                                            <includes>
-                                                <include>**/*.md</include>
-                                            </includes>
-                                            <filtering>true</filtering>
-                                        </resource>
-                                    </resources>
-                                    <outputDirectory>${project.build.interim.site.directory}/markdown/</outputDirectory>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>copy-resources-into-target</id>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <phase>validate</phase>
-                                <configuration>
-                                    <resources>
-                                        <resource>
-                                            <directory>${project.docs.directory}/</directory>
-                                            <excludes>
-                                                <exclude>**/*.md</exclude>
-                                                <exclude>site.xml</exclude>
-                                            </excludes>
-                                            <filtering>false</filtering>
-                                        </resource>
-                                    </resources>
-                                    <outputDirectory>${project.build.interim.site.directory}/resources/</outputDirectory>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>copy-sitexml-into-target</id>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <phase>validate</phase>
-                                <configuration>
-                                    <resources>
-                                        <resource>
-                                            <directory>${project.docs.directory}/</directory>
-                                            <includes>
-                                                <include>site.xml</include>
-                                            </includes>
-                                            <filtering>false</filtering>
-                                        </resource>
-                                    </resources>
-                                    <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>copy-site-resources-into-target</id>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <phase>validate</phase>
-                                <configuration>
-                                    <resources>
-                                        <resource>
-                                            <directory>src/site</directory>
-                                            <filtering>true</filtering>
-                                        </resource>
-                                    </resources>
-                                    <outputDirectory>${project.build.interim.site.directory}</outputDirectory>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
@@ -595,7 +516,7 @@
                                         <artifactItem>
                                             <groupId>uk.pallas.systems.site</groupId>
                                             <artifactId>resources</artifactId>
-                                            <version>${uk.pallas.systems.site.version}</version>
+                                            <version>${uk.pallas.systems.site.resources.version}</version>
                                             <type>jar</type>
                                             <overWrite>true</overWrite>
                                             <outputDirectory>${project.build.interim.site.directory}/</outputDirectory>

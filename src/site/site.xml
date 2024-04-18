@@ -24,6 +24,9 @@
             <linkedin>
                 <accountId>pallas-systems-ltd</accountId>
             </linkedin>
+            <twitter>
+                <accountId>PallasUK</accountId>
+            </twitter>
             <gitHub>
                 <organisation>PallasSystems</organisation>
                 <repository>maven-parent</repository>
@@ -31,7 +34,7 @@
             <navbar>
                 <enabled>true</enabled>
                 <icon>
-                    <alt>Contains various resources required to ensure a consistent look for the maven generated sites associated with Pallas Systems.</alt>
+                    <alt>Super POM to be used on all Pallas Systems projects.</alt>
                     <href>./index.html</href>
                     <src>./images/pallas-image.png</src>
                     <width>68px</width>
@@ -42,20 +45,19 @@
                 <skipBreadcrumb>true</skipBreadcrumb>
                 <style>navbar_suffix_menu border-top navbar-dark bg-dark container-fluid</style>
             </projectbar>
-            <twitter>
-                <accountId>PallasUK</accountId>
-            </twitter>
         </bootstrapSkin>
     </custom>
 
     <body>
         <links>
-            <item name="Overview" href="overview/getting_started.html"/>
-            <item name="Developer Guide" href="documentation/developer_guides/developer_guide.html"/>
-            <item name="FAQ" href="overview/faq.html"/>
+            <item name="Getting Started" href="./gettingStarted/gett.html"/>
         </links>
-
-        <menu ref="modules" />
-        <menu ref="reports" />
+        <menu name="Developer Guides">
+            <item name="Build" href="./documentation/developer_guides/developer_guide.html"/>
+            <item name="Documentation" href="./documentation/developer_guides/documentation_guide.md"/>
+            <item name="Release" href="./developers/technical/release_project.html"/>
+        </menu>
+        <menu ref="reports"/>
     </body>
+
 </project>
