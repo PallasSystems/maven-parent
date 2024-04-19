@@ -17,20 +17,20 @@
     </div>
     <div class="col">
       <div class="d-grid gap-2 my-2">
-        <a role="button" tabindex="0" href="./documentation/developer_guides/index.md" style="min-height: 4em;" class="btn btn-dark">
+        <a role="button" tabindex="1" href="./documentation/developer_guides/developer_guide.md" style="min-height: 4em;" class="btn btn-dark">
           <p class="home_btn">Developer Guides</p>
         </a>
       </div>
     </div>
     <div class="col">
       <div class="d-grid gap-2 my-2">
-        <a role="button" tabindex="0" href="./project-info" style="min-height: 4em;" class="btn btn-dark">
+        <a role="button" tabindex="2" href="./project-info" style="min-height: 4em;" class="btn btn-dark">
           <p class="home_btn">Project Information</p>
         </a>
       </div>
     </div>
   </div>
   <div class="my-2 row">
-    <p>Current Version: 0.3.3</p>
+    <p>Current Version: 1.0.8</p>
   </div>
 </div>

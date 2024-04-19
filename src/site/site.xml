@@ -50,11 +50,11 @@
 
     <body>
         <links>
-            <item name="Getting Started" href="./gettingStarted/gett.html"/>
+            <item name="Getting Started" href="./gettingStarted/index.html"/>
         </links>
         <menu name="Developer Guides">
             <item name="Build" href="./documentation/developer_guides/developer_guide.html"/>
-            <item name="Documentation" href="./documentation/developer_guides/documentation_guide.md"/>
+            <item name="Documentation" href="./documentation/developer_guides/developer_guide.md"/>
             <item name="Release" href="./developers/technical/release_project.html"/>
         </menu>
         <menu ref="reports"/>
