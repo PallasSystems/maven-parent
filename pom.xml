@@ -128,7 +128,7 @@
         <sonar-maven-plugin.version>5.1</sonar-maven-plugin.version>
 
         <!-- Javadoc specific configuration. -->
-        <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
         <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 
         <!-- Spotbugs specific configuration. -->
