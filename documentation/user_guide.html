@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Maven Parent – User Guide</title>
+    <title>User Guide – Maven Parent</title>
 
         <link rel="icon" href=".././img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -237,13 +237,12 @@
         <div class="container mt-3 rounded">
                   
     
-    <section>
+    <section><a id="User_Guide"></a>
 <h1>User Guide</h1>
-<p>This guide provides details on each field and how to incorporate the skin</p><section>
+<p>This guide provides details on each field and how to incorporate the skin</p><section><a id="site.xml_configuration"></a>
 <h2>site.xml configuration</h2>
 <p>You will need to define a <code>site.xml</code> file and define</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/DECORATION/1.8.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd&quot;&gt;
     &lt;edit&gt;${project.scm.url}&lt;/edit&gt;
@@ -266,11 +265,10 @@
         &lt;menu ref=&quot;reports&quot; /&gt;
     &lt;/body&gt;
 &lt;/project&gt;
-</code></pre></div><section>
+</code></pre><section><a id="TopBar_and.2For_sideBar"></a>
 <h3>TopBar and/or sideBar</h3>
 <p>The skin supports different layouts, enabling/disabling the left sidebar menu and the topbar menu.  Users have just play with flags in the <code>custom.pallasSkin</code> element in <code>site.xml</code>:</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     &lt;custom&gt;
         &lt;pallasSkin&gt;
@@ -279,7 +277,7 @@
         &lt;/pallasSkin&gt;
     &lt;/custom&gt;
 &lt;/project&gt;
-</code></pre></div>
+</code></pre>
 <p>That allows users having 4 skins in only 1!</p>
 <ul>
 
@@ -287,12 +285,11 @@
 <li>topbar only;</li>
 <li>both side/top bars;</li>
 <li>none at all.</li>
-</ul></section><section>
+</ul></section><section><a id="TopBarIcon"></a>
 <h3>TopBarIcon</h3>
 <p>When users decide to enable the topbar, they can plug a small icon/logo there (typically 108*20 px) just configuring
 the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -308,11 +305,10 @@ the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:<
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="TopBarContainerStyle"></a>
 <h3>TopBarContainerStyle</h3>
 <p>You can configure the style attribute value of the div container for your topbar</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -323,12 +319,11 @@ the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:<
         &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="NavBarStyle"></a>
 <h3>NavBarStyle</h3>
 <p>You can configure style of your top bar nav (since bootstrap 2.1.0 is not anymore black by default).
 Use navbar-inverse to have the black one.</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -339,12 +334,11 @@ Use navbar-inverse to have the black one.</p>
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="SourceLineNumbers"></a>
 <h3>SourceLineNumbers</h3>
 <p>Source code sections are enhanced by {{{<a href="https://github.com/google/code-prettify" class="externalLink">https://github.com/google/code-prettify</a>}Google Code Prettify}}, users can
 optionally enable line numbers rendering (disabled by default):</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -354,7 +348,7 @@ optionally enable line numbers rendering (disabled by default):</p>
         &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="GitHub_ribbons"></a>
 <h3>GitHub ribbons</h3>
 <p>Pallas-skin supports <a href="https://github.com/blog/273-github-ribbons" class="externalLink">GitHub ribbons</a> to simplify the <code>Fork me on GitHub</code> banner integration. Users must define:</p>
 <ul>
@@ -364,7 +358,6 @@ optionally enable line numbers rendering (disabled by default):</p>
 <li><code>custom.pallasSkin.gitHub.ribbonColor</code>: optional, it is the the ribbon color, <code>red</code>/<code>green</code>/<code>black</code>/&#xab;darkblue&#xbb;/<code>orange</code>/<code>gray</code> only accepted only accepted (<code>red</code> by default).</li>
 </ul>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -378,7 +371,7 @@ optionally enable line numbers rendering (disabled by default):</p>
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section><section>
+</code></pre></section><section><a id="Project_profile"></a>
 <h3>Project profile</h3>
 <p>As shown in (MojoHaus Maven plugins list)[<a href="http://www.mojohaus.org/plugins.html" class="externalLink">http://www.mojohaus.org/plugins.html</a>) plugins life-cycle are characterized by
 different status/stages:</p>
@@ -392,7 +385,6 @@ different status/stages:</p>
 <p>Users can configure different backgrounds depending on the project status (except the production) to warrant users they
 are not using a production ready software:</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
     [...]
     &lt;custom&gt;
@@ -402,33 +394,29 @@ are not using a production ready software:</p>
     &lt;/custom&gt;
     [...]
 &lt;/project&gt;
-</code></pre></div></section></section><section>
+</code></pre></section></section><section><a id="Maven_configuration"></a>
 <h2>Maven configuration</h2>
 <p>The maven site plugin currently expect documentation to sit in specific paths <a href="https://maven.apache.org/plugins/maven-site-plugin/examples/creating-content.html" class="externalLink">as documented on the maven-site-plugin website</a>.</p>
 <p>This creates a problem as the maven-site-plugin converts the documentation path as part of constructing the Maven site. So for example if you have a document on the following path <code>src/site/markdown/example.md</code> it might reference an image found under <code>src/site/resources/images/diagram.png</code>. For this to be navigatable through markdown viewers built into code repositories you would construct your image reference like so</p>
 
-<div class="verbatim">
 <pre><code>this is some example text
 ![Diagram](../resources/images/diagram.png)
 here is the image caption
-</code></pre></div>
+</code></pre>
 <p>The problem is in the resulting Maven site the directory will look like the following:</p>
 
-<div class="verbatim">
 <pre><code>+- target/
    +- site/
       +- example.html
       +- images/
          +- diagram.png
-</code></pre></div>
+</code></pre>
 <p>The maven-site-plugin will retrain the reference and so example.html will have an image tag like the following:</p>
 
-<div class="verbatim">
 <pre><code class="language-html">&lt;img alt=&quot;Diagram&quot; src=&quot;../resources/images/diagram.png&quot; /&gt;
-</code></pre></div>
+</code></pre>
 <p>We need to hide the folder structure quirk found in the Apache Maven plugin, we can do this by configuring the maven-resources-plugin to scan a directory for specific supported document types and copy it into an interim</p>
 
-<div class="verbatim">
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -533,7 +521,7 @@ here is the image caption
         &lt;/plugins&gt;
     &lt;/build&gt;
 &lt;/project&gt;
-</code></pre></div></section></section>
+</code></pre></section></section>
       </div>
     </main>
 
