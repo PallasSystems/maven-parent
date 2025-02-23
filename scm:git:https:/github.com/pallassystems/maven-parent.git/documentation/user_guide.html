@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en" style="height:100%">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="#generatedBy()" />
+
+    <title>User Guide – Maven Parent</title>
+
+        <link rel="icon" href=".././img/favicons/favicon.ico">
+    <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
+        <link rel="stylesheet" href=".././css/bootstrap.min.css" />
+        <link rel="stylesheet" href=".././css/bootstrap-icons.css" />
+        <link rel="stylesheet" href=".././css/maven-base.css" />
+        <link rel="stylesheet" href=".././css/prettify.css" />
+
+
+    <link rel="stylesheet" href=".././css/maven-theme.css" />
+        <link rel="stylesheet" href=".././css/site.css" />
+  </head>
+  <body class="d-flex flex-column h-100">
+
+    <header class="sticky-top">
+                      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div id="NavBrandBar.Container" class="container-fluid">
+        
+      
+    
+                      <a href=".././index.html" id="NavBrandBar.BrandLink"
+              title="Super POM to be used on all Pallas Systems projects."
+            
+              class="text-light active navbar-brand"
+          >
+  
+          
+        
+        
+        
+        
+        
+      <img id="NavBrandBar.Brand.Img" src=".././images/pallas-image.png"  alt="Super POM to be used on all Pallas Systems projects."  title="Navbar Brand Icon" width="68px" height="52px" 
+              />
+  
+                  Maven Parent
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#NavBrandBar.Collapse.Container" aria-controls="NavBrandBar.Collapse.Container" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+      
+  
+    <div id="NavBrandBar.Collapse.Container" class="justify-content-end navbar-collapse collapse">
+    <div class="d-flex navbar-nav">
+              <a id="NavBrandBar.Link.scm" class="nav-link" href="https://github.com/PallasSystems/maven-parent" data-rr-ui-event-key="https://github.com/PallasSystems/maven-parent" >
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="68px" height="52px" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</svg>
+
+        </a>
+      
+      
+      
+              <ul id="NavBrandBar.Menu.List" class="navbar-nav">
+            
+            <li class="nav-item">
+              
+        
+        <a class="navbar_collapse_menu nav-link" href="../gettingStarted/index.html" id="Link.Dropdown.Getting Started" role="button" aria-expanded="false">Getting Started</a>
+            </li>
+                        
+            <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Developer Guides" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer Guides <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Developer Guides">
+                                    <li class="nav-item dropdown-item" id="BuildDropdown">
+                                                <a href="../documentation/developer_guides/developer_guide.html" id="BuildDropdownLink" title="Build"  class="dropdown-item" >Build</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="DocumentationDropdown">
+                                                <a href="../documentation/developer_guides/developer_guide.md" id="DocumentationDropdownLink" title="Documentation"  class="dropdown-item" >Documentation</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="ReleaseDropdown">
+                                                <a href="../developers/technical/release_project.html" id="ReleaseDropdownLink" title="Release"  class="dropdown-item" >Release</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
+        <a class="navbar_collapse_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Project Documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Project Documentation">
+                                    <li class="nav-item dropdown-item dropdown-submenu">
+                                                <a href="../project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>                      <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../index.html" id="AboutDropdownLink" title="About"  class="dropdown-item" >About</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../issue-management.html" id="Issue ManagementDropdownLink" title="Issue Management"  class="dropdown-item" >Issue Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../licenses.html" id="LicensesDropdownLink" title="Licenses"  class="dropdown-item" >Licenses</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../plugin-management.html" id="Plugin ManagementDropdownLink" title="Plugin Management"  class="dropdown-item" >Plugin Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../scm.html" id="Source Code ManagementDropdownLink" title="Source Code Management"  class="dropdown-item" >Source Code Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../summary.html" id="SummaryDropdownLink" title="Summary"  class="dropdown-item" >Summary</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../team.html" id="TeamDropdownLink" title="Team"  class="dropdown-item" >Team</a>                          </li>
+                                  </ul>
+              </li>
+                                                <li class="nav-item dropdown-item dropdown-submenu">
+                                                <a href="../project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>                      <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
+                                  </ul>
+              </li>
+                              </ul>
+      </li>
+              </ul>
+          </div>
+  </div>
+
+  </nav>
+            
+      <nav id="projectBar" class="navbar navbar-expand-sm navbar_suffix_menu navbar_suffix_menu border-top navbar-dark bg-dark container-fluid" aria-label="projectBarList">
+        
+                      <ul id="projectBar.navbar.list" class="navbar-nav navbar_suffix_menu">
+                
+            <li class="nav-item">
+              
+        
+        <a class="navbar_suffix_menu nav-link" href="../gettingStarted/index.html" id="Link.Dropdown.Getting Started" role="button" aria-expanded="false">Getting Started</a>
+            </li>
+                            
+            <li class="nav-item dropdown">
+        <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Developer Guides" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer Guides <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Developer Guides">
+                                    <li class="nav-item dropdown-item" id="BuildDropdown">
+                                                <a href="../documentation/developer_guides/developer_guide.html" id="BuildDropdownLink" title="Build"  class="dropdown-item" >Build</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="DocumentationDropdown">
+                                                <a href="../documentation/developer_guides/developer_guide.md" id="DocumentationDropdownLink" title="Documentation"  class="dropdown-item" >Documentation</a>                    </li>
+                                                <li class="nav-item dropdown-item" id="ReleaseDropdown">
+                                                <a href="../developers/technical/release_project.html" id="ReleaseDropdownLink" title="Release"  class="dropdown-item" >Release</a>                    </li>
+                              </ul>
+      </li>
+                <li class="nav-item dropdown">
+        <a class="navbar_suffix_menu nav-link dropdown-toggle" href="#" id="Menu.Dropdown.Project Documentation" role="button" data-bs-toggle="dropdown" aria-expanded="false">Project Documentation <b class="caret"></b></a>
+        <ul class="dropdown-menu" aria-labelledby="Menu.Dropdown.Project Documentation">
+                                    <li class="nav-item dropdown-item dropdown-submenu">
+                                                <a href="../project-info.html" id="Project InformationDropdownLink" title="Project Information"  class="dropdown-item" >Project Information</a>                      <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../index.html" id="AboutDropdownLink" title="About"  class="dropdown-item" >About</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../issue-management.html" id="Issue ManagementDropdownLink" title="Issue Management"  class="dropdown-item" >Issue Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../licenses.html" id="LicensesDropdownLink" title="Licenses"  class="dropdown-item" >Licenses</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../plugin-management.html" id="Plugin ManagementDropdownLink" title="Plugin Management"  class="dropdown-item" >Plugin Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../scm.html" id="Source Code ManagementDropdownLink" title="Source Code Management"  class="dropdown-item" >Source Code Management</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../summary.html" id="SummaryDropdownLink" title="Summary"  class="dropdown-item" >Summary</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../team.html" id="TeamDropdownLink" title="Team"  class="dropdown-item" >Team</a>                          </li>
+                                  </ul>
+              </li>
+                                                <li class="nav-item dropdown-item dropdown-submenu">
+                                                <a href="../project-reports.html" id="Project ReportsDropdownLink" title="Project Reports"  class="dropdown-item" >Project Reports</a>                      <ul id="Project DocumentationMenuSubMenuDropdown" class="dropdown-menu submenu">
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../jacoco-aggregate/index.html" id="JaCoCo AggregateDropdownLink" title="JaCoCo Aggregate"  class="dropdown-item" >JaCoCo Aggregate</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../changelog.html" id="Change LogDropdownLink" title="Change Log"  class="dropdown-item" >Change Log</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../file-activity.html" id="File ActivityDropdownLink" title="File Activity"  class="dropdown-item" >File Activity</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../dev-activity.html" id="Developer ActivityDropdownLink" title="Developer Activity"  class="dropdown-item" >Developer Activity</a>                          </li>
+                                      <li class="nav-item dropdown-item">
+                                                      <a href="../surefire.html" id="SurefireDropdownLink" title="Surefire"  class="dropdown-item" >Surefire</a>                          </li>
+                                  </ul>
+              </li>
+                              </ul>
+      </li>
+                    
+            </ul>
+          
+            
+  
+                              
+    <div id="breadcrumbSpacer" ></div>
+  
+                          
+        
+
+              </div>
+    </nav>
+      </header>
+
+              <main class="flex-grow-1" role="main">
+        <div class="container mt-3 rounded">
+                  
+    
+    <section><a id="User_Guide"></a>
+<h1>User Guide</h1>
+<p>This guide provides details on each field and how to incorporate the skin</p><section><a id="site.xml_configuration"></a>
+<h2>site.xml configuration</h2>
+<p>You will need to define a <code>site.xml</code> file and define</p>
+
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/DECORATION/1.8.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd&quot;&gt;
+    &lt;edit&gt;${project.scm.url}&lt;/edit&gt;
+    &lt;skin&gt;
+        &lt;groupId&gt;uk.pallas&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-pallas-skin&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+    &lt;/skin&gt;
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;sourceLineNumbersEnabled&gt;true&lt;/sourceLineNumbersEnabled&gt;
+            &lt;sideBarEnabled&gt;false&lt;/sideBarEnabled&gt;
+            &lt;topBarEnabled&gt;true&lt;/topBarEnabled&gt;
+        &lt;/pallasSkin&gt;
+    &lt;/custom&gt;
+
+    &lt;body&gt;
+        &lt;menu ref=&quot;parent&quot;/&gt;
+        &lt;menu ref=&quot;modules&quot; /&gt;
+        &lt;menu ref=&quot;reports&quot; /&gt;
+    &lt;/body&gt;
+&lt;/project&gt;
+</code></pre><section><a id="TopBar_and.2For_sideBar"></a>
+<h3>TopBar and/or sideBar</h3>
+<p>The skin supports different layouts, enabling/disabling the left sidebar menu and the topbar menu.  Users have just play with flags in the <code>custom.pallasSkin</code> element in <code>site.xml</code>:</p>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;topBarEnabled&gt;true&lt;/topBarEnabled&gt;
+            &lt;sideBarEnabled&gt;false&lt;/sideBarEnabled&gt;
+        &lt;/pallasSkin&gt;
+    &lt;/custom&gt;
+&lt;/project&gt;
+</code></pre>
+<p>That allows users having 4 skins in only 1!</p>
+<ul>
+
+<li>sidebar only;</li>
+<li>topbar only;</li>
+<li>both side/top bars;</li>
+<li>none at all.</li>
+</ul></section><section><a id="TopBarIcon"></a>
+<h3>TopBarIcon</h3>
+<p>When users decide to enable the topbar, they can plug a small icon/logo there (typically 108*20 px) just configuring
+the <code>custom.pallasSkin.topBarIcon</code> element in <code>site.xml</code>:</p>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    [...]
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;topBarEnabled&gt;true&lt;/topBarEnabled&gt;
+            &lt;topBarIcon&gt;
+                &lt;name&gt;Maven Pallas Skin&lt;/name&gt;
+                &lt;alt&gt;Maven Pallas Skin&lt;/alt&gt;
+                &lt;src&gt;/images/topbar-logo.png&lt;/src&gt;
+                &lt;href&gt;/index.html&lt;/href&gt;
+            &lt;/topBarIcon&gt;
+        &lt;/pallasSkin&gt;
+    &lt;/custom&gt;
+    [...]
+&lt;/project&gt;
+</code></pre></section><section><a id="TopBarContainerStyle"></a>
+<h3>TopBarContainerStyle</h3>
+<p>You can configure the style attribute value of the div container for your topbar</p>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    [...]
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;topBarEnabled&gt;true&lt;/topBarEnabled&gt;
+            &lt;topBarContainerStyle&gt;width: 90%;&lt;/topBarContainerStyle&gt;
+        &lt;/pallasSkin&gt;
+        &lt;/custom&gt;
+    [...]
+&lt;/project&gt;
+</code></pre></section><section><a id="NavBarStyle"></a>
+<h3>NavBarStyle</h3>
+<p>You can configure style of your top bar nav (since bootstrap 2.1.0 is not anymore black by default).
+Use navbar-inverse to have the black one.</p>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    [...]
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;topBarEnabled&gt;true&lt;/topBarEnabled&gt;
+            &lt;navBarStyle&gt;navbar-inverse&lt;/navBarStyle&gt;
+        &lt;/pallasSkin&gt;
+    &lt;/custom&gt;
+    [...]
+&lt;/project&gt;
+</code></pre></section><section><a id="SourceLineNumbers"></a>
+<h3>SourceLineNumbers</h3>
+<p>Source code sections are enhanced by {{{<a href="https://github.com/google/code-prettify" class="externalLink">https://github.com/google/code-prettify</a>}Google Code Prettify}}, users can
+optionally enable line numbers rendering (disabled by default):</p>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    [...]
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;sourceLineNumbersEnabled&gt;true&lt;/sourceLineNumbersEnabled&gt;
+        &lt;/pallasSkin&gt;
+        &lt;/custom&gt;
+    [...]
+&lt;/project&gt;
+</code></pre></section><section><a id="GitHub_ribbons"></a>
+<h3>GitHub ribbons</h3>
+<p>Pallas-skin supports <a href="https://github.com/blog/273-github-ribbons" class="externalLink">GitHub ribbons</a> to simplify the <code>Fork me on GitHub</code> banner integration. Users must define:</p>
+<ul>
+
+<li><code>custom.pallasSkin.gitHub.projectId</code>: required, it is the project id on GitHub and will be used to build the project page URL;</li>
+<li><code>custom.pallasSkin.gitHub.ribbonOrientation</code>: optional, it is the the ribbon position, <code>left</code>/<code>right</code> only accepted (<code>left</code> by default);</li>
+<li><code>custom.pallasSkin.gitHub.ribbonColor</code>: optional, it is the the ribbon color, <code>red</code>/<code>green</code>/<code>black</code>/&#xab;darkblue&#xbb;/<code>orange</code>/<code>gray</code> only accepted only accepted (<code>red</code> by default).</li>
+</ul>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    [...]
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;gitHub&gt;
+                &lt;projectId&gt;apache/maven-skins&lt;/projectId&gt;
+                &lt;ribbonOrientation&gt;right&lt;/ribbonOrientation&gt;
+                &lt;ribbonColor&gt;black&lt;/ribbonColor&gt;
+            &lt;/gitHub&gt;
+        &lt;/pallasSkin&gt;
+    &lt;/custom&gt;
+    [...]
+&lt;/project&gt;
+</code></pre></section><section><a id="Project_profile"></a>
+<h3>Project profile</h3>
+<p>As shown in (MojoHaus Maven plugins list)[<a href="http://www.mojohaus.org/plugins.html" class="externalLink">http://www.mojohaus.org/plugins.html</a>) plugins life-cycle are characterized by
+different status/stages:</p>
+<ul>
+
+<li>Production</li>
+<li>Pre-release</li>
+<li>Sandbox</li>
+<li>Graveyard (retired projects)</li>
+</ul>
+<p>Users can configure different backgrounds depending on the project status (except the production) to warrant users they
+are not using a production ready software:</p>
+
+<pre><code class="language-xml">&lt;project name=&quot;xxx&quot;&gt;
+    [...]
+    &lt;custom&gt;
+        &lt;pallasSkin&gt;
+            &lt;profile&gt;(pre-release|sandbox|retired)&lt;/profile&gt;
+        &lt;/pallasSkin&gt;
+    &lt;/custom&gt;
+    [...]
+&lt;/project&gt;
+</code></pre></section></section><section><a id="Maven_configuration"></a>
+<h2>Maven configuration</h2>
+<p>The maven site plugin currently expect documentation to sit in specific paths <a href="https://maven.apache.org/plugins/maven-site-plugin/examples/creating-content.html" class="externalLink">as documented on the maven-site-plugin website</a>.</p>
+<p>This creates a problem as the maven-site-plugin converts the documentation path as part of constructing the Maven site. So for example if you have a document on the following path <code>src/site/markdown/example.md</code> it might reference an image found under <code>src/site/resources/images/diagram.png</code>. For this to be navigatable through markdown viewers built into code repositories you would construct your image reference like so</p>
+
+<pre><code>this is some example text
+![Diagram](../resources/images/diagram.png)
+here is the image caption
+</code></pre>
+<p>The problem is in the resulting Maven site the directory will look like the following:</p>
+
+<pre><code>+- target/
+   +- site/
+      +- example.html
+      +- images/
+         +- diagram.png
+</code></pre>
+<p>The maven-site-plugin will retrain the reference and so example.html will have an image tag like the following:</p>
+
+<pre><code class="language-html">&lt;img alt=&quot;Diagram&quot; src=&quot;../resources/images/diagram.png&quot; /&gt;
+</code></pre>
+<p>We need to hide the folder structure quirk found in the Apache Maven plugin, we can do this by configuring the maven-resources-plugin to scan a directory for specific supported document types and copy it into an interim</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;   
+    
+   &lt;properties&gt;
+      &lt;project.docs.directory&gt;${project.basedir}/docs&lt;/project.docs.directory&gt;
+      &lt;project.build.interim.site.directory&gt;${project.build.directory}/docs-site&lt;/project.build.interim.site.directory&gt;
+      &lt;maven-resources-plugin-version&gt;3.2.0&lt;/maven-resources-plugin-version&gt;
+      &lt;maven-site-plugin-version&gt;4.0.0-M1&lt;/maven-site-plugin-version&gt;
+   &lt;/properties&gt;
+
+   &lt;build&gt;
+        &lt;pluginManagement&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                    &lt;artifactId&gt;maven-site-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;${maven-site-plugin-version}&lt;/version&gt;
+                    &lt;configuration&gt;
+                        &lt;siteDirectory&gt;${project.build.interim.site.directory}&lt;/siteDirectory&gt;
+                    &lt;/configuration&gt;
+                &lt;/plugin&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                    &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;${maven-resources-plugin-version}&lt;/version&gt;
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/pluginManagement&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;copy-markdown-into-target&lt;/id&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;copy-resources&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;phase&gt;validate&lt;/phase&gt;
+                        &lt;configuration&gt;
+                            &lt;resources&gt;
+                                &lt;resource&gt;
+                                    &lt;directory&gt;${project.docs.directory}/&lt;/directory&gt;
+                                    &lt;includes&gt;
+                                      &lt;include&gt;**/*.md&lt;/include&gt;
+                                    &lt;/includes&gt;
+                                    &lt;filtering&gt;true&lt;/filtering&gt;
+                                &lt;/resource&gt;
+                            &lt;/resources&gt;
+                            &lt;outputDirectory&gt;${project.build.interim.site.directory}/markdown/&lt;/outputDirectory&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;copy-resources-into-target&lt;/id&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;copy-resources&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;phase&gt;validate&lt;/phase&gt;
+                        &lt;configuration&gt;
+                            &lt;resources&gt;
+                                &lt;resource&gt;
+                                    &lt;directory&gt;${project.docs.directory}/&lt;/directory&gt;
+                                    &lt;excludes&gt;
+                                        &lt;exclude&gt;**/*.md&lt;/exclude&gt;
+                                        &lt;exclude&gt;site.xml&lt;/exclude&gt;
+                                    &lt;/excludes&gt;
+                                    &lt;filtering&gt;false&lt;/filtering&gt;
+                                &lt;/resource&gt;
+                            &lt;/resources&gt;
+                            &lt;outputDirectory&gt;${project.build.interim.site.directory}/resources/&lt;/outputDirectory&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;copy-sitexml-into-target&lt;/id&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;copy-resources&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;phase&gt;validate&lt;/phase&gt;
+                        &lt;configuration&gt;
+                            &lt;resources&gt;
+                                &lt;resource&gt;
+                                    &lt;directory&gt;${project.docs.directory}/&lt;/directory&gt;
+                                    &lt;includes&gt;
+                                        &lt;include&gt;site.xml&lt;/include&gt;
+                                    &lt;/includes&gt;
+                                    &lt;filtering&gt;false&lt;/filtering&gt;
+                                &lt;/resource&gt;
+                            &lt;/resources&gt;
+                            &lt;outputDirectory&gt;${project.build.interim.site.directory}/&lt;/outputDirectory&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-site-plugin&lt;/artifactId&gt;
+                &lt;version&gt;${maven-site-plugin-version}&lt;/version&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre></section></section>
+      </div>
+    </main>
+
+  <footer class="footer d-flex align-items-end mt-auto py-4 bg-dark text-light">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
+                        <div id="ContactDetailsDiv" class="pt-2">
+            <h5 class="text-uppercase fw-bold">Contact</h5>
+                                                <a id="bootstrapSkin.contact.emailLinkContact" href="mailto:${orgEmail}" class=" my-0"><i id="bootstrapSkin.contact.emailLinkIcon" class=" bi-envelope px-1 px-1"></i>info@pallas.uk</a>
+                                                       </div>
+              
+  <div id="SocialMediaSectionWrapper" class="pt-2">
+    <p id="SocialMediaSectionWrapper.IconBlock" class="m-1">
+              <a id="SocialMediaSectionWrapper.IconBlock.facebook" class="text-light, px-1" href="https://www.facebook.com/groups/350073883439443">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+</svg>
+
+        </a>
+      
+      
+              <a id="SocialMediaSectionWrapper.IconBlock.linkedin" class="text-light, px-1" href="https://linkedin.com/in/pallas-systems-ltd">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>
+
+        </a>
+      
+              <a id="SocialMediaSectionWrapper.IconBlock.twitter" class="text-light, px-1" href="https://twitter.com/PallasUK">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+</svg>
+
+        </a>
+          </p>
+  </div>
+          </div>
+          <div class="mx-auto mb-md-0 mb-4 col-xl-3 col-lg-3 col-md-4">
+            <div id="copyrightDiv" class="pt-3">
+              <p>&#169;
+                  
+          2022&#x2013;2025
+    
+                  <a href="https://www.pallas.uk">Pallas Systems</a>
+                          </p>
+                          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        <script src=".././js/jquery.slim.min.js"></script>
+        <script src=".././js/popper.min.js"></script>
+        <script src=".././js/bootstrap.min.js"></script>
+        <script src=".././js/prettify.js"></script>
+
+    <!-- Used to enable the code-prettify running on the view. -->
+    <script>
+        addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+    </script>
+  </body>
