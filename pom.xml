@@ -60,7 +60,7 @@
         </snapshotRepository>
         <site>
             <id>site</id>
-            <url>./</url>
+            <url>https://${github_organisation}.github.io/${github_repository_name}/</url>
         </site>
     </distributionManagement>
 
