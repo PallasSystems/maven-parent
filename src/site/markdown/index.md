@@ -31,6 +31,6 @@
     </div>
   </div>
   <div class="my-2 row">
-    <p>Current Version: 1.0.8</p>
+    <p>Current Version: ${project.version}</p>
   </div>
 </div>
