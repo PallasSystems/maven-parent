@@ -58,10 +58,6 @@
             <id>snapshots</id>
             <url>https://maven.pkg.github.com/${github_organisation}/${github_repository_name}/</url>
         </snapshotRepository>
-        <site>
-            <id>site</id>
-            <url>https://${github_organisation}.github.io/${github_repository_name}/</url>
-        </site>
     </distributionManagement>
 
     <properties>
