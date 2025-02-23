@@ -4,7 +4,7 @@
 
     <groupId>uk.pallas.systems</groupId>
     <artifactId>parent</artifactId>
-    <version>1.1.16-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
     <name>Maven Parent</name>
     <packaging>pom</packaging>
     <description>SUPER POM to simplify development of Maven based projects for Freeman.</description>
@@ -58,6 +58,10 @@
             <id>snapshots</id>
             <url>https://maven.pkg.github.com/${github_organisation}/${github_repository_name}/</url>
         </snapshotRepository>
+        <site>
+            <id>site</id>
+            <url>./</url>
+        </site>
     </distributionManagement>
 
     <properties>
@@ -111,7 +115,7 @@
         <releaseVersion />
 
         <!-- Apache Maven Reporting Plugin Versions. -->
-        <maven-site-plugin.version>4.0.0-M16</maven-site-plugin.version>
+        <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.5.0</maven-project-info-reports-plugin.version>
         <maven-scm-publish-plugin.version>3.2.1</maven-scm-publish-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
