@@ -132,7 +132,7 @@
         <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 
         <!-- Spotbugs specific configuration. -->
-        <spotbugs-maven-plugin.version>4.8.6.2</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.9.1.0</spotbugs-maven-plugin.version>
         <spotbugs.xmlOutput>true</spotbugs.xmlOutput>
         <spotbugs.effort>Max</spotbugs.effort>
         <spotbugs.skipEmptyReport>true</spotbugs.skipEmptyReport>
