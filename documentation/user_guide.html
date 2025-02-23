@@ -399,13 +399,13 @@ are not using a production ready software:</p>
 <p>The maven site plugin currently expect documentation to sit in specific paths <a href="https://maven.apache.org/plugins/maven-site-plugin/examples/creating-content.html" class="externalLink">as documented on the maven-site-plugin website</a>.</p>
 <p>This creates a problem as the maven-site-plugin converts the documentation path as part of constructing the Maven site. So for example if you have a document on the following path <code>src/site/markdown/example.md</code> it might reference an image found under <code>src/site/resources/images/diagram.png</code>. For this to be navigatable through markdown viewers built into code repositories you would construct your image reference like so</p>
 
-<pre><code>this is some example text
+<pre><code class="nohighlight nocode">this is some example text
 ![Diagram](../resources/images/diagram.png)
 here is the image caption
 </code></pre>
 <p>The problem is in the resulting Maven site the directory will look like the following:</p>
 
-<pre><code>+- target/
+<pre><code class="nohighlight nocode">+- target/
    +- site/
       +- example.html
       +- images/

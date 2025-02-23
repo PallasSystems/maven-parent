@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Dependency Information – Maven Parent</title>
+    <title>Project Plugin Management – Maven Parent</title>
 
         <link rel="icon" href="./img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -109,7 +109,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                  <a title="Dependency Information" class="dropdown-item">Dependency Information</a>                          </li>
+                                                      <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -119,7 +119,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="licenses.html" id="LicensesDropdownLink" title="Licenses"  class="dropdown-item" >Licenses</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="plugin-management.html" id="Plugin ManagementDropdownLink" title="Plugin Management"  class="dropdown-item" >Plugin Management</a>                          </li>
+                                  <a title="Plugin Management" class="dropdown-item">Plugin Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -181,7 +181,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                  <a title="Dependency Information" class="dropdown-item">Dependency Information</a>                          </li>
+                                                      <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -191,7 +191,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="licenses.html" id="LicensesDropdownLink" title="Licenses"  class="dropdown-item" >Licenses</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="plugin-management.html" id="Plugin ManagementDropdownLink" title="Plugin Management"  class="dropdown-item" >Plugin Management</a>                          </li>
+                                  <a title="Plugin Management" class="dropdown-item">Plugin Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -238,28 +238,108 @@
                   
     
     <section>
-<h1>Dependency Information</h1><a id="Dependency_Information"></a><section>
-<h2>Apache Maven</h2><a id="Apache_Maven"></a>
-<pre>&lt;dependency&gt;
-  &lt;groupId&gt;uk.pallas.systems&lt;/groupId&gt;
-  &lt;artifactId&gt;parent&lt;/artifactId&gt;
-  &lt;version&gt;1.1.15&lt;/version&gt;
-  &lt;type&gt;pom&lt;/type&gt;
-&lt;/dependency&gt;</pre></section><section>
-<h2>Apache Ivy</h2><a id="Apache_Ivy"></a>
-<pre>&lt;dependency org=&quot;uk.pallas.systems&quot; name=&quot;parent&quot; rev=&quot;1.1.15&quot;&gt;
-  &lt;artifact name=&quot;parent&quot; type=&quot;pom&quot; /&gt;
-&lt;/dependency&gt;</pre></section><section>
-<h2>Groovy Grape</h2><a id="Groovy_Grape"></a>
-<pre>@Grapes(
-@Grab(group='uk.pallas.systems', module='parent', version='1.1.15')
-)</pre></section><section>
-<h2>Gradle/Grails</h2><a id="Gradle.2FGrails"></a>
-<pre>implementation 'uk.pallas.systems:parent:1.1.15'</pre></section><section>
-<h2>Scala SBT</h2><a id="Scala_SBT"></a>
-<pre>libraryDependencies += &quot;uk.pallas.systems&quot; % &quot;parent&quot; % &quot;1.1.15&quot;</pre></section><section>
-<h2>Leiningen</h2><a id="Leiningen"></a>
-<pre>[uk.pallas.systems/parent &quot;1.1.15&quot;]</pre></section></section>
+<h1>Project Plugin Management</h1><a id="Project_Plugin_Management"></a>
+<table class="table table-striped">
+<tr class="a">
+<th>GroupId</th>
+<th>ArtifactId</th>
+<th>Version</th></tr>
+<tr class="b">
+<td style="text-align: left;">com.github.spotbugs</td>
+<td><a class="externalLink" href="https://spotbugs.github.io/spotbugs-maven-plugin/">spotbugs-maven-plugin</a></td>
+<td>4.8.6.2</td></tr>
+<tr class="a">
+<td style="text-align: left;">net.nicoulaj.maven.plugins</td>
+<td><a class="externalLink" href="https://checksum-maven-plugin.nicoulaj.net">checksum-maven-plugin</a></td>
+<td>1.11</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-antrun-plugin/">maven-antrun-plugin</a></td>
+<td>3.1.0</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-assembly-plugin/">maven-assembly-plugin</a></td>
+<td>3.7.1</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="http://maven.apache.org/plugins/maven-changelog-plugin/">maven-changelog-plugin</a></td>
+<td>2.3</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-checkstyle-plugin/">maven-checkstyle-plugin</a></td>
+<td>3.3.1</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-compiler-plugin/">maven-compiler-plugin</a></td>
+<td>3.13.0</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-dependency-plugin/">maven-dependency-plugin</a></td>
+<td>3.6.1</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-deploy-plugin/">maven-deploy-plugin</a></td>
+<td>3.1.2</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/surefire/maven-failsafe-plugin/">maven-failsafe-plugin</a></td>
+<td>3.2.5</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-gpg-plugin/">maven-gpg-plugin</a></td>
+<td>3.2.4</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-jar-plugin/">maven-jar-plugin</a></td>
+<td>3.4.2</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/jxr/maven-jxr-plugin/">maven-jxr-plugin</a></td>
+<td>3.6.0</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-pmd-plugin/">maven-pmd-plugin</a></td>
+<td>3.24.0</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-project-info-reports-plugin/">maven-project-info-reports-plugin</a></td>
+<td>3.5.0</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/maven-release/maven-release-plugin/">maven-release-plugin</a></td>
+<td>3.1.1</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-resources-plugin/">maven-resources-plugin</a></td>
+<td>3.3.1</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-scm-publish-plugin/">maven-scm-publish-plugin</a></td>
+<td>3.2.1</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-site-plugin/">maven-site-plugin</a></td>
+<td>3.21.0</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/plugins/maven-source-plugin/">maven-source-plugin</a></td>
+<td>3.3.1</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/surefire/maven-surefire-plugin/">maven-surefire-plugin</a></td>
+<td>3.5.2</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.apache.maven.plugins</td>
+<td><a class="externalLink" href="https://maven.apache.org/surefire/maven-surefire-report-plugin/">maven-surefire-report-plugin</a></td>
+<td>3.5.2</td></tr>
+<tr class="b">
+<td style="text-align: left;">org.codehaus.mojo</td>
+<td><a class="externalLink" href="https://www.mojohaus.org/taglist-maven-plugin/">taglist-maven-plugin</a></td>
+<td>3.2.1</td></tr>
+<tr class="a">
+<td style="text-align: left;">org.jacoco</td>
+<td><a class="externalLink" href="https://www.jacoco.org/jacoco/trunk/doc/maven.html">jacoco-maven-plugin</a></td>
+<td>0.8.12</td></tr></table></section>
       </div>
     </main>
 

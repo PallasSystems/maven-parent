@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="#generatedBy()" />
 
-    <title>Source Code Management – Maven Parent</title>
+    <title>Dependency Information – Maven Parent</title>
 
         <link rel="icon" href="./img/favicons/favicon.ico">
     <!-- CSS Stylesheets, site.css is included so downstream projects can override them as appropriate. -->
@@ -109,7 +109,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                  <a title="Dependency Information" class="dropdown-item">Dependency Information</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -123,7 +123,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                  <a title="Source Code Management" class="dropdown-item">Source Code Management</a>                          </li>
+                                                      <a href="scm.html" id="Source Code ManagementDropdownLink" title="Source Code Management"  class="dropdown-item" >Source Code Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="summary.html" id="SummaryDropdownLink" title="Summary"  class="dropdown-item" >Summary</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -181,7 +181,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="ci-management.html" id="CI ManagementDropdownLink" title="CI Management"  class="dropdown-item" >CI Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                                      <a href="dependency-info.html" id="Dependency InformationDropdownLink" title="Dependency Information"  class="dropdown-item" >Dependency Information</a>                          </li>
+                                  <a title="Dependency Information" class="dropdown-item">Dependency Information</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="distribution-management.html" id="Distribution ManagementDropdownLink" title="Distribution Management"  class="dropdown-item" >Distribution Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -195,7 +195,7 @@
                                       <li class="nav-item dropdown-item">
                                                       <a href="plugins.html" id="PluginsDropdownLink" title="Plugins"  class="dropdown-item" >Plugins</a>                          </li>
                                       <li class="nav-item dropdown-item">
-                                  <a title="Source Code Management" class="dropdown-item">Source Code Management</a>                          </li>
+                                                      <a href="scm.html" id="Source Code ManagementDropdownLink" title="Source Code Management"  class="dropdown-item" >Source Code Management</a>                          </li>
                                       <li class="nav-item dropdown-item">
                                                       <a href="summary.html" id="SummaryDropdownLink" title="Summary"  class="dropdown-item" >Summary</a>                          </li>
                                       <li class="nav-item dropdown-item">
@@ -238,19 +238,28 @@
                   
     
     <section>
-<h1>Overview</h1><a id="Overview"></a>
-<p>This project uses <a class="externalLink" href="https://git-scm.com/">Git</a> to manage its source code. Instructions on Git use can be found at <a class="externalLink" href="https://git-scm.com/documentation">https://git-scm.com/documentation</a>.</p></section><section>
-<h1>Web Browser Access</h1><a id="Web_Browser_Access"></a>
-<p>The following is a link to a browsable version of the source repository:</p>
-<pre><a class="externalLink" href="https://github.com/pallassystems/maven-parent">https://github.com/pallassystems/maven-parent</a></pre></section><section>
-<h1>Anonymous Access</h1><a id="Anonymous_Access"></a>
-<p>The source can be checked out anonymously from Git with this command (See <a class="externalLink" href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>):</p>
-<pre>$ git clone --branch v1.1.15 https://github.com/pallassystems/maven-parent.git</pre></section><section>
-<h1>Developer Access</h1><a id="Developer_Access"></a>
-<p>Only project developers can access the Git tree via this method (See <a class="externalLink" href="https://git-scm.com/docs/git-clone">https://git-scm.com/docs/git-clone</a>).</p>
-<pre>$ git clone --branch v1.1.15 https://github.com/pallassystems/maven-parent.git</pre></section><section>
-<h1>Access from Behind a Firewall</h1><a id="Access_from_Behind_a_Firewall"></a>
-<p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p></section>
+<h1>Dependency Information</h1><a id="Dependency_Information"></a><section>
+<h2>Apache Maven</h2><a id="Apache_Maven"></a>
+<pre>&lt;dependency&gt;
+  &lt;groupId&gt;uk.pallas.systems&lt;/groupId&gt;
+  &lt;artifactId&gt;parent&lt;/artifactId&gt;
+  &lt;version&gt;1.1.17&lt;/version&gt;
+  &lt;type&gt;pom&lt;/type&gt;
+&lt;/dependency&gt;</pre></section><section>
+<h2>Apache Ivy</h2><a id="Apache_Ivy"></a>
+<pre>&lt;dependency org=&quot;uk.pallas.systems&quot; name=&quot;parent&quot; rev=&quot;1.1.17&quot;&gt;
+  &lt;artifact name=&quot;parent&quot; type=&quot;pom&quot; /&gt;
+&lt;/dependency&gt;</pre></section><section>
+<h2>Groovy Grape</h2><a id="Groovy_Grape"></a>
+<pre>@Grapes(
+@Grab(group='uk.pallas.systems', module='parent', version='1.1.17')
+)</pre></section><section>
+<h2>Gradle/Grails</h2><a id="Gradle.2FGrails"></a>
+<pre>implementation 'uk.pallas.systems:parent:1.1.17'</pre></section><section>
+<h2>Scala SBT</h2><a id="Scala_SBT"></a>
+<pre>libraryDependencies += &quot;uk.pallas.systems&quot; % &quot;parent&quot; % &quot;1.1.17&quot;</pre></section><section>
+<h2>Leiningen</h2><a id="Leiningen"></a>
+<pre>[uk.pallas.systems/parent &quot;1.1.17&quot;]</pre></section></section>
       </div>
     </main>
 
